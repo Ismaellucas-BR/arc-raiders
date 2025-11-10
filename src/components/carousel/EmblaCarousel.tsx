@@ -7,66 +7,24 @@ import {
   usePrevNextButtons,
 } from "./EmblaCarouselArrowButtons";
 
-// Tipando o JSON
-import DataJSON from "../../data/News.json";
-import { Link } from "react-router";
-
-const Data: CardProps[] = DataJSON as CardProps[];
-
-export interface CardContentTable {
-  titles: {
-    th1: string;
-    th2: string;
-    th3: string;
-    th4: string;
-  };
-  content: {
-    row1: { item1: string; item2: string; item3: string; item4: string };
-    row2: { item1: string; item2: string; item3: string; item4: string };
-    row3: { item1: string; item2: string; item3: string; item4: string };
-    row4: { item1: string; item2: string; item3: string; item4: string };
-  };
-}
-
-export interface CardContentList {
-  dad?: string;
-  content: string[];
-}
-
-export type CardContent =
-  | {
-      type:
-        | "paragraph"
-        | "subtitle"
-        | "subtitleUppercase"
-        | "subtitleH2"
-        | "image"
-        | "video";
-      content: string;
-    }
-  | { type: "list"; content: string[] | CardContentList }
-  | { type: "table"; content: CardContentTable };
-
-export interface CardProps {
+export interface SlideProps {
   id: number;
-  image?: string;
-  thumb?: string;
-  category: string;
-  date: string;
+  type: "video" | "image";
+  pretitle: string;
   title: string;
   subtitle: string;
-  // Permite strings extras sem quebrar TS
-  type?: "bgBlack" | "blur" | "video" | string;
-  content?: CardContent[];
-  blog: boolean;
+  imageUrl?: string;
+  videoUrl?: string;
+  justifyTextSlide?: string;
+  ExtraClassTitle?: string;
 }
 
 type PropType = {
-  slides: CardProps[];
+  slides: SlideProps[];
   options?: EmblaOptionsType;
 };
 
-const EmblaCarousel: React.FC<PropType> = ({ options }) => {
+const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -92,117 +50,81 @@ const EmblaCarousel: React.FC<PropType> = ({ options }) => {
   }, [emblaApi, onScroll]);
 
   return (
-    <div className="embla__slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
-      <div
-        className="embla__viewport md:max-w-[100rem] w-[90vw] md:w-[100%]"
-        ref={emblaRef}>
-        <div className="embla__container relative w-full gap-7">
-          {Data.map((card) => {
-            let linkTo = "#"; // fallback
-            let isExternal = false;
+    <div className="embla w-full">
+      <div className="embla__viewport overflow-hidden" ref={emblaRef}>
+        <div className="embla__container flex gap-5">
+          {slides.map((slide) => (
+            <div
+              key={slide.id}
+              className="embla__slide flex-[0_0_100%] relative overflow-hidden">
+              {slide.type === "video" && slide.videoUrl ? (
+                <div className="relative w-full overflow-hidden">
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover">
+                    <source src={slide.videoUrl} type="video/mp4" />
+                    Seu navegador não suporta a tag de vídeo.
+                  </video>
 
-            if (card.type === "video" && Array.isArray(card.content)) {
-              // Type guard para encontrar o conteúdo de vídeo
-              const videoItem = card.content.find(
-                (c): c is { type: "video"; content: string } =>
-                  c.type === "video" && typeof c.content === "string"
-              );
-
-              if (videoItem) {
-                linkTo = videoItem.content; // TS agora reconhece como string
-                isExternal = true;
-              }
-            } else if (card.type === "blur") {
-              linkTo = `/news/blur/${card.id}`;
-            } else if (card.type === "bgBlack") {
-              linkTo = `/news/bgBlack/${card.id}`;
-            }
-
-            return isExternal ? (
-              <a
-                href={linkTo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="embla__slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-[1rem]"
-                key={card.id}>
-                <div className="embla__slide__content">
-                  <div className="relative">
-                    {card.thumb && <img src={card.thumb} className=" w-full" />}
-                    <img
-                      src="https://playvalorant.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/link-square.svg"
-                      alt="icone de link"
-                      className="absolute bottom-0 right-0 w-10"
-                    />
-                  </div>
-
-                  <div className="flex gap-3 items-center font-DINNext font-bold mt-3">
-                    <span className="text-light-red uppercase text-[0.875rem]">
-                      {card.category}
-                    </span>
-                    <div className="w-[1px] h-4 bg-gray-400" />
-                    <span className="text-azulmarinho text-[0.75rem]">
-                      {card.date}
-                    </span>
-                  </div>
-
-                  <div>
-                    <h2 className="text-[1.125rem] text-azulmarinho font-bold">
-                      {card.title}
-                    </h2>
-                    <span className="text-[0.75rem] text-azulmarinho font-normal">
-                      {card.subtitle}
-                    </span>
+                  {/* Overlay com texto */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-r from-transparent via-black/20 to-black/70 flex flex-col items-center justify-center text-center p-4 w-full px-[5%] ${slide.justifyTextSlide} ${slide.justifyTextSlide}`}>
+                    <div className="lg:w-2/5 text-left">
+                      <span className="uppercase bg-[#ffd800] text-black font-semibold text-[0.8125rem] px-2">
+                        {slide.pretitle}
+                      </span>
+                      <h2 className="text-white text-xl font-bold drop-shadow-lg text-[3.875rem]">
+                        {slide.title}
+                      </h2>
+                      <p className="text-gray-200 drop-shadow-md text-[2.125rem]">
+                        {slide.subtitle}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </a>
-            ) : (
-              <Link
-                to={linkTo}
-                className="embla__slide flex-shrink-0  w-full md:w-1/2 lg:w-1/3 md:px-[1rem]"
-                key={card.id}>
-                <div className="embla__slide__content">
-                  <div className="relative">
-                    {card.thumb && <img src={card.thumb} className="w-full" />}
+              ) : (
+                slide.imageUrl && (
+                  <div className="relative w-full h-full">
                     <img
-                      src="https://playvalorant.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/link-square.svg"
-                      alt="icone de link"
-                      className="absolute bottom-0 right-0 w-10"
+                      src={slide.imageUrl}
+                      alt={slide.title}
+                      className="w-full h-full object-cover"
                     />
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-r from-transparent via-black/20 to-black/70 flex flex-col items-center justify-center text-center p-4 w-full px-[5%] ${slide.justifyTextSlide} ${slide.justifyTextSlide}`}>
+                      <div className="lg:w-2/5 text-left">
+                        <span className="uppercase bg-[#ffd800] text-black font-semibold text-[0.8125rem] px-2">
+                          {slide.pretitle}
+                        </span>
+                        <h2
+                          className={`text-white text-xl font-bold drop-shadow-lg ${slide.ExtraClassTitle}`}>
+                          {slide.title}
+                        </h2>
+                        <p className="text-gray-200 drop-shadow-md text-[2.125rem]">
+                          {slide.subtitle}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-
-                  <div className="flex gap-3 items-center font-DINNext font-bold mt-3">
-                    <span className="text-light-red uppercase text-[0.875rem]">
-                      {card.category}
-                    </span>
-                    <div className="w-[1px] h-4 bg-gray-400" />
-                    <span className="text-azulmarinho text-[0.75rem]">
-                      {card.date}
-                    </span>
-                  </div>
-
-                  <div>
-                    <h2 className="text-[1.125rem] text-azulmarinho font-bold">
-                      {card.title}
-                    </h2>
-                    <span className="text-[0.75rem] text-azulmarinho font-normal">
-                      {card.subtitle}
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
+                )
+              )}
+            </div>
+          ))}
         </div>
       </div>
 
-      <div className="embla__controls grid md:flex md:w-full lg:hidden!">
-        <div className="embla__progress w-2/3 md:w-full!">
+      {/* Controles */}
+      <div className="embla__controls flex items-center justify-between mt-4">
+        <div className="embla__progress flex-1 bg-gray-700 h-1 mx-2 relative">
           <div
-            className="embla__progress__bar bg-light-red"
-            style={{ transform: `translate3d(${scrollProgress}%,0px,0px)` }}
+            className="embla__progress__bar bg-green-500 absolute top-0 left-0 h-1"
+            style={{ width: `${scrollProgress}%` }}
           />
         </div>
-        <div className="embla__buttons text-light-red md:w-1/3">
+        <div className="embla__buttons flex gap-2">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>

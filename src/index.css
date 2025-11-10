@@ -9,6 +9,7 @@
   --font-DINNext: "DINNext", sans-serif;
   --color-azulmarinho: rgb(15, 25, 35);
   --color-light-red: rgb(255, 70, 85);
+  --color-gray26: #262626;
 }
 @font-face {
   font-family: Tungsten;
@@ -180,37 +181,37 @@ body {
 @media (min-width: 768px) {
   /* tablet */
   .embla__viewport {
-    padding-inline: 1.5rem; /* mais espaço nas laterais */
+    padding-inline: 0; /* mais espaço nas laterais */
   }
 }
 @media (min-width: 825px) {
   /* tablet */
   .embla__viewport {
-    padding-inline: 1.8rem; /* mais espaço nas laterais */
+    padding-inline: 0; /* mais espaço nas laterais */
   }
 }
 @media (min-width: 929px) {
   /* tablet */
   .embla__viewport {
-    padding-inline: 2rem; /* mais espaço nas laterais */
+    padding-inline: 0; /* mais espaço nas laterais */
   }
 }
 @media (min-width: 989px) {
   /* tablet */
   .embla__viewport {
-    padding-inline: 2.2rem; /* mais espaço nas laterais */
+    padding-inline: 0; /* mais espaço nas laterais */
   }
 }
 @media (min-width: 1050px) {
   /* desktop */
   .embla__viewport {
-    padding-inline: 2.5rem;
+    padding-inline: 0;
   }
 }
 @media (min-width: 1128px) {
   /* desktop */
   .embla__viewport {
-    padding-inline: 2.8rem;
+    padding-inline: 0;
   }
 }
 
@@ -417,9 +418,9 @@ body {
 /*Midia ends*/
 /*Header start*/
 .nav-effect {
-  @apply relative p-2 bg-transparent rounded-md cursor-pointer hover:bg-[rgba(128,128,128,.3)] hover:text-light-red;
+  @apply relative px-2 pb-2 bg-transparent rounded-md cursor-pointer  hover:text-light-red;
 }
 .span-effect {
-  @apply after:content-[''] after:block after:w-full after:h-[3px] after:bg-red-500 after:absolute after:bottom-0 after:left-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 text-lg;
+  @apply after:content-[''] after:block after:w-full after:h-[3px] after:bg-gray26 after:absolute after:bottom-0 after:left-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 text-lg;
 }
 /*Header end*/

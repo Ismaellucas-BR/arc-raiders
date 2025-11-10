@@ -1,43 +1,65 @@
+import EmblaCarousel from "../carousel/EmblaCarousel";
+import type { SlideProps } from "../carousel/EmblaCarousel";
 import { useTranslation } from "react-i18next";
+
 export default function HeroSection() {
   const { t } = useTranslation("home");
+  const options = { loop: true };
+
+  const CarouselData: SlideProps[] = [
+    {
+      id: 0,
+      type: "video",
+      videoUrl:
+        "https://cms-assets.xboxservices.com/assets/db/13/db137951-b8a4-4989-9e49-900784f75aed.mp4?n=5491272942-HP_Cinemagraph_1920x720_01.mp4",
+      pretitle: "jogue no primeiro dia com o game pass",
+      title: "Call of Duty®: Black Ops 7",
+      subtitle:
+        "Abrace a loucura com o Black Ops mais insano de todos os tempos. ",
+      justifyTextSlide: "items-start",
+      ExtraClassTitle: "text-[3.875rem]",
+    },
+    {
+      id: 1,
+      type: "image",
+      imageUrl:
+        "https://cms-assets.xboxservices.com/assets/22/62/2262735b-7198-46a6-b57d-3038ba54ac44.jpg?n=346743332231_Page-Hero-1084_1920x720_02.jpg",
+      pretitle: "Já Disponível",
+      title: "The Outer Worlds 2",
+      subtitle: "Explore uma nova fronteira com o PC Game Pass ou Ultimate",
+      justifyTextSlide: "items-end",
+      ExtraClassTitle: "text-[2.875rem]",
+    },
+    {
+      id: 2,
+      type: "image",
+      imageUrl:
+        "https://cms-assets.xboxservices.com/assets/b2/31/b2318f32-af97-4e1c-bf5f-20a36ac599fa.jpg?n=4990200040_Page-Hero-1084_1920x720.jpg",
+      pretitle: "Já Disponível",
+      title: "NINJA GAIDEN 4",
+      subtitle:
+        "Onde as sombras caem, as lendas surgem.      Jogue agora com o Game Pass ou compre",
+      justifyTextSlide: "items-end",
+      ExtraClassTitle: "text-[2.875rem]",
+    },
+    {
+      id: 3,
+      type: "image",
+      imageUrl:
+        "https://cms-assets.xboxservices.com/assets/94/33/94335341-2bb9-45b8-ba37-b9d84524de7f.jpg?n=Keeper_Page-Hero-1084_1920x720.jpg",
+      pretitle: "JOGUE COM O GAME PASS",
+      title: "Keeper",
+      subtitle: "Uma história contada sem palavras.",
+      justifyTextSlide: "items-end",
+      ExtraClassTitle: "text-[2.875rem]",
+    },
+  ];
+
+  const limitedSlides = CarouselData.slice(0, 4);
+
   return (
-    <section className="w-full">
-      <div className="relative ">
-        <video
-          data-testid="backdrop-background"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full object-cover z-0  h-[80vh]"
-          style={{ display: "flex" }}>
-          <source
-            data-testid="source-video/mp4"
-            src="https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/409ab2fc369ba5e1fe50bac10c6676d7d1365a9f.mp4"
-            type="video/mp4"
-          />
-        </video>
-        <div className="absolute inset-0 bg-azulmarinho/70 z-10"></div>
-        <div className="bg-[linear-gradient(to top, rgb(15, 25, 35) 0%, transparent 100%) center bottom / 100% 100% no-repeat] z-20"></div>
-        <div className="absolute flex flex-col items-center justify-center text-center w-full top-1/2 -translate-y-1/2 z-30 gap-5">
-          <img
-            src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/7b76209193f1bfe190d3ae6ef8728328870be9c3-736x138.png?auto=format&fit=fill&q=80&w=476"
-            alt="Logo escrito 'Valorant'"
-            className="w-[15rem] h-[2.9rem] md:w-[21.25rem] md:h-[4rem]"
-          />
-          <h1 className="text-[1.6rem] font-tungsten uppercase leading-7 w-[90%] md:w-full">
-            {t("h1HeroSection")}
-          </h1>
-          <button
-            className="hidden bg-[#ff4655] text-[#ece8e1] uppercase text-sm font-normal 
-               px-8 py-5 h-16 leading-6 font-sans 
-               outline outline-1 outline-[#ece8e1] outline-offset-3 
-               transition-colors duration-300 ease-in-out md:mt-5">
-            JOGUE GRÁTIS
-          </button>
-        </div>
-      </div>
+    <section className="w-full lg:h-[32.25rem]">
+      <EmblaCarousel slides={limitedSlides} options={options} />
     </section>
   );
 }
