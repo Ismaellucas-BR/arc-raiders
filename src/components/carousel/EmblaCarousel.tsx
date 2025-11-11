@@ -6,17 +6,20 @@ import {
   PrevButton,
   usePrevNextButtons,
 } from "./EmblaCarouselArrowButtons";
-
 export interface SlideProps {
   id: number;
   type: "video" | "image";
-  pretitle: string;
+  pretitle?: string;
   title: string;
   subtitle: string;
-  imageUrl?: string;
+  imageUrlMobile?: string;
+  imageUrlTablet?: string;
+  imageUrlDesktop?: string;
   videoUrl?: string;
   justifyTextSlide?: string;
   ExtraClassTitle?: string;
+  extraClassPreTitle?: string;
+  ExtraClassTitleImg?: string;
 }
 
 type PropType = {
@@ -56,60 +59,104 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
           {slides.map((slide) => (
             <div
               key={slide.id}
-              className="embla__slide flex-[0_0_100%] relative overflow-hidden">
+              className="embla__slide flex-[0_0_100%] relative overflow-hidden h-[65vh] xl:h-[100%]">
+              {/* SLIDE TIPO VÍDEO */}
               {slide.type === "video" && slide.videoUrl ? (
-                <div className="relative w-full overflow-hidden">
+                <>
+                  {/* Imagem Mobile */}
+                  {slide.imageUrlMobile && (
+                    <img
+                      src={slide.imageUrlMobile}
+                      alt={slide.title}
+                      className="block md:hidden w-full h-full object-cover object-top"
+                    />
+                  )}
+
+                  {/* Imagem Tablet */}
+                  {slide.imageUrlTablet && (
+                    <img
+                      src={slide.imageUrlTablet}
+                      alt={slide.title}
+                      className="hidden md:block lg:hidden w-full h-full object-cover object-top"
+                    />
+                  )}
+
+                  {/* Vídeo apenas no Desktop */}
                   <video
                     autoPlay
                     muted
                     loop
                     playsInline
-                    className="w-full h-full object-cover">
+                    className="hidden lg:block w-full h-full object-cover object-top">
                     <source src={slide.videoUrl} type="video/mp4" />
                     Seu navegador não suporta a tag de vídeo.
                   </video>
 
-                  {/* Overlay com texto */}
+                  {/* Overlay */}
                   <div
-                    className={`absolute inset-0 bg-gradient-to-r from-transparent via-black/20 to-black/70 flex flex-col items-center justify-center text-center p-4 w-full px-[5%] ${slide.justifyTextSlide} ${slide.justifyTextSlide}`}>
-                    <div className="lg:w-2/5 text-left">
-                      <span className="uppercase bg-[#ffd800] text-black font-semibold text-[0.8125rem] px-2">
+                    className={`absolute inset-0 bg-gradient-to-t from-transparent via-black/20 to-black/70 flex flex-col items-center justify-end text-center p-4 pt-20 w-full px-[10%] lg:px-[5%] ${slide.justifyTextSlide} pb-20 xl:items-start xl:text-left`}>
+                    <div className="flex flex-col justify-center items-center gap-3 xl:w-2/5 text-center xl:text-left xl:items-start">
+                      <span
+                        className={`max-w-max uppercase bg-[#ffd800] text-black font-semibold text-[0.8125rem] px-2 ${slide.extraClassPreTitle}`}>
                         {slide.pretitle}
                       </span>
-                      <h2 className="text-white text-xl font-bold drop-shadow-lg text-[3.875rem]">
+                      <h2 className="text-white text-xl font-bold drop-shadow-lg text-[1.625rem] lg:text-[3.875rem]">
                         {slide.title}
                       </h2>
-                      <p className="text-gray-200 drop-shadow-md text-[2.125rem]">
+                      <p className="text-gray-200 drop-shadow-md text-[0.9375rem] lg:text-[2.125rem]">
                         {slide.subtitle}
                       </p>
                     </div>
                   </div>
-                </div>
+                </>
               ) : (
-                slide.imageUrl && (
-                  <div className="relative w-full h-full">
+                // SLIDE TIPO IMAGEM
+                <>
+                  {/* Mobile */}
+                  {slide.imageUrlMobile && (
                     <img
-                      src={slide.imageUrl}
+                      src={slide.imageUrlMobile}
                       alt={slide.title}
-                      className="w-full h-full object-cover"
+                      className="block md:hidden w-full h-full object-cover object-top"
                     />
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-r from-transparent via-black/20 to-black/70 flex flex-col items-center justify-center text-center p-4 w-full px-[5%] ${slide.justifyTextSlide} ${slide.justifyTextSlide}`}>
-                      <div className="lg:w-2/5 text-left">
-                        <span className="uppercase bg-[#ffd800] text-black font-semibold text-[0.8125rem] px-2">
-                          {slide.pretitle}
-                        </span>
-                        <h2
-                          className={`text-white text-xl font-bold drop-shadow-lg ${slide.ExtraClassTitle}`}>
-                          {slide.title}
-                        </h2>
-                        <p className="text-gray-200 drop-shadow-md text-[2.125rem]">
-                          {slide.subtitle}
-                        </p>
-                      </div>
+                  )}
+
+                  {/* Tablet */}
+                  {slide.imageUrlTablet && (
+                    <img
+                      src={slide.imageUrlTablet}
+                      alt={slide.title}
+                      className="hidden md:block lg:hidden w-full h-full object-cover object-top"
+                    />
+                  )}
+
+                  {/* Desktop */}
+                  {slide.imageUrlDesktop && (
+                    <img
+                      src={slide.imageUrlDesktop}
+                      alt={slide.title}
+                      className="hidden lg:block w-full h-full object-cover object-top"
+                    />
+                  )}
+
+                  {/* Overlay */}
+                  <div
+                    className={`absolute inset-0 md:bg-gradient-to-b md:from-transparent md:via-black/20 md:to-black/70 flex flex-col items-center justify-end text-center p-4 w-full px-[5%] ${slide.justifyTextSlide} pb-20 xl:items-end`}>
+                    <div className="flex flex-col justify-center items-center xl:gap-3 xl:w-2/5 text-center lg:text-left xl:justify-start xl:items-start">
+                      <span
+                        className={`max-w-max uppercase bg-[#ffd800] text-black font-semibold text-[0.8125rem] px-2 ${slide.extraClassPreTitle}`}>
+                        {slide.pretitle}
+                      </span>
+                      <h2
+                        className={`text-white text-xl font-bold drop-shadow-lg text-[1.625rem] lg:text-[2.875rem] xl:text-[3.875rem] xl:leading-[4.5rem] ${slide.ExtraClassTitleImg}`}>
+                        {slide.title}
+                      </h2>
+                      <p className="text-gray-200 drop-shadow-md text-[0.9375rem] lg:text-[2.125rem] text-center xl:text-left">
+                        {slide.subtitle}
+                      </p>
                     </div>
                   </div>
-                )
+                </>
               )}
             </div>
           ))}
@@ -117,13 +164,7 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
       </div>
 
       {/* Controles */}
-      <div className="embla__controls flex items-center justify-between mt-4">
-        <div className="embla__progress flex-1 bg-gray-700 h-1 mx-2 relative">
-          <div
-            className="embla__progress__bar bg-green-500 absolute top-0 left-0 h-1"
-            style={{ width: `${scrollProgress}%` }}
-          />
-        </div>
+      <div className="embla__controls flex items-center justify-between mt-4 hidden">
         <div className="embla__buttons flex gap-2">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />

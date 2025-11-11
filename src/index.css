@@ -7,9 +7,9 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-tungsten: "Tungsten", sans-serif;
   --font-DINNext: "DINNext", sans-serif;
-  --color-azulmarinho: rgb(15, 25, 35);
-  --color-light-red: rgb(255, 70, 85);
   --color-gray26: #262626;
+  --color-green-xbox: #107c10;
+  --color-light-red: #107c10;
 }
 @font-face {
   font-family: Tungsten;

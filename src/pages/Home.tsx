@@ -9,11 +9,6 @@ export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center max-w-[100rem] ">
       <HeroSection />
-      <MediaCardsSection limit={3} />
-      <Season2025 />
-      <WeAreValorant />
-      <YourAgents />
-      <YourMaps />
     </div>
   );
 }
