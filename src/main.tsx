@@ -13,6 +13,8 @@ import Midia from "./pages/Midia";
 import NewsBlurPage from "./pages/NewsBlurPage";
 import NewsBgBlackPage from "./pages/NewsBgBlackPage";
 import News from "./pages/News";
+import TwitchDropsPage from "./pages/TwitchDrops";
+import CreatorProgram from "./pages/CreatorProgram";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <LanguageProvider>
@@ -20,6 +22,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/twitch-drops" element={<TwitchDropsPage />} />
+            <Route path="/creator-program" element={<CreatorProgram />} />
             <Route path="/agents/" element={<Agents />} />
             <Route path="/agents/:agentId" element={<InternalAgents />} />
             <Route path="/maps" element={<Maps />} />

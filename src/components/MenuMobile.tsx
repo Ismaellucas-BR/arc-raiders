@@ -26,22 +26,22 @@ export default function MenuMobile() {
         </SheetHeader>
         <nav className=" text-white">
           <ul className="flex flex-col justify-start items-start font-inter uppercase cursor-pointer text-xl pl-2">
-            <li className="nav-effect">
+            <li className="">
               <Link className="span-effect text-white" to={"/agents"}>
                 {t("Agents")}
               </Link>
             </li>
-            <li className="nav-effect">
+            <li className="">
               <Link className="span-effect" to={"/maps"}>
                 {t("Maps")}
               </Link>
             </li>
-            <li className="nav-effect">
+            <li className="">
               <Link className="span-effect" to={"/arsenal"}>
                 {t("Arsenal")}
               </Link>
             </li>
-            <li className="nav-effect">
+            <li className="">
               <Link className="span-effect" to={"/midia"}>
                 {t("Media")}
               </Link>

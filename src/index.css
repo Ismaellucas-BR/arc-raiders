@@ -1,48 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 @theme {
   --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-tungsten: "Tungsten", sans-serif;
-  --font-DINNext: "DINNext", sans-serif;
-  --color-gray26: #262626;
+  --font-barlow: "Barlow", sans-serif;
+  --color-dark-blue: #130918;
+  --color-bege: #ece2d0;
   --color-green-xbox: #107c10;
   --color-light-red: #107c10;
+  --color-yellow-arc: #f1aa1c;
 }
-@font-face {
-  font-family: Tungsten;
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("./assets/fonts/Tungsten-Bold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "DINNext";
-  src: url("./assets/fonts/dinnextw1g_light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "DINNext";
-  src: url("./assets/fonts/dinnextw1g_medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "DINNext";
-  src: url("./assets/fonts/dinnextw1g_bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "DINNext";
-  src: url("./assets/fonts/dinnextw1g_heavy.woff2") format("woff2");
-  font-weight: 900;
-  font-style: normal;
-}
-
 html,
 body {
   @apply bg-white dark:bg-gray-950;
@@ -421,6 +391,28 @@ body {
   @apply relative px-2 pb-2 bg-transparent rounded-md cursor-pointer  hover:text-light-red;
 }
 .span-effect {
-  @apply after:content-[''] after:block after:w-full after:h-[3px] after:bg-gray26 after:absolute after:bottom-0 after:left-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 text-lg;
+  @apply after:content-[''] after:block after:w-full after:h-[3px] after:absolute after:bottom-0 after:left-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 text-lg;
 }
 /*Header end*/
+/*Hero Arc*/
+.hero-arc {
+  background-image: url("https://arcraiders.com/images/hero-bg/hero-bg-2.jpg");
+}
+/*Hero Arc*/
+button svg {
+  color: #130918 !important;
+  width: 50px !important;
+}
+/*Hero Twitch*/
+.hero-twitch {
+  background-image: url("https://arcraiders.com/images/twitch-drops/hero-bg.jpg");
+}
+/*Hero Twich*/
+/*Hero Creator*/
+.hero-creator {
+  background-image: url("https://arcraiders.com/images/creator-program/hero-bg.jpg");
+}
+.bg-second-section-creator {
+  background-image: url("https://arcraiders.com/images/creator-program/dark-bg.png");
+}
+/*Hero Creator*/
