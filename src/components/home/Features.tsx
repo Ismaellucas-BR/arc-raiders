@@ -34,7 +34,7 @@ export default function Features() {
       title: "Explore an immersive world.",
       content:
         "Lethal and bold but vibrant and beautiful, ARC Raiders offers an inviting take on the post-post-apocalypse. An immersive world built using Unreal Engine 5 where the remnants of Italy's rich history blend with brutal infrastructure for space travel. While lethal machines roam the dangerous surface, the cantina below ground still has food options.",
-      imageBar: <SecondBar />,
+      imageBar: <SecondBar extraClassSvg="h-[130px]! w-[6.61px]!" />,
       imageMobile:
         "https://arcraiders.com/images/features/feature-2-mobile.jpg",
       imageDesktop: "https://arcraiders.com/images/features/feature-2.jpg",

@@ -9,7 +9,7 @@ export default function HeroSection() {
           <div className="flex justify-center items-center gap-3">
             <Logo textColor="#fff" />
           </div>
-          <h2 className="text-[#ece2d0] text-[3rem] md:text-[3.5rem] xl:text-[5rem] text-center leading-12 uppercase font-bold">
+          <h2 className="text-[#ece2d0] text-[3rem] md:text-[3.5rem] xl:text-[5rem] text-center leading-12 uppercase font-bold md:leading-14 xl:leading-20">
             Programa Embarque para Criadores
           </h2>
         </div>
