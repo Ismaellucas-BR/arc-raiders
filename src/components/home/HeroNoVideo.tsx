@@ -11,7 +11,7 @@ export default function HeroNoVideo() {
       <div className="bg-black/50 absolute inset-0 z-0 h-full"></div>
       <div className="flex flex-col justify-center items-center min-w-[90%] gap-6 py-10 z-10 lg:gap-10 xl:gap-12">
         <div className="flex flex-col justify-center items-center gap-3 lg:gap-10 xl:gap-12">
-          <Logo textColor="#fff" />
+          <Logo textcolor="#fff" />
           <h2 className="text-[#ece2d0] text-[3rem] md:text-[3.5rem] lg:text-[5rem] xl:text-[6rem] text-center leading-10 uppercase font-bold">
             Disponível agora
           </h2>

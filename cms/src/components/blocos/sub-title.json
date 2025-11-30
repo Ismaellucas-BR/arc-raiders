@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocos_sub_titles",
+  "info": {
+    "displayName": "SubTitle"
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

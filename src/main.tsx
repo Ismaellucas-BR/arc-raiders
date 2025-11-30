@@ -15,6 +15,7 @@ import NewsBgBlackPage from "./pages/NewsBgBlackPage";
 import News from "./pages/News";
 import TwitchDropsPage from "./pages/TwitchDrops";
 import CreatorProgram from "./pages/CreatorProgram";
+import NewsSingle from "./components/news/NewsSingle";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <LanguageProvider>
@@ -25,7 +26,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route path="/twitch-drops" element={<TwitchDropsPage />} />
             <Route path="/creator-program" element={<CreatorProgram />} />
             <Route path="/agents/" element={<Agents />} />
-            <Route path="/agents/:agentId" element={<InternalAgents />} />
+            <Route path="/news/:slug" element={<NewsSingle />} />
             <Route path="/maps" element={<Maps />} />
             <Route path="/arsenal" element={<Arsenal />} />
             <Route path="/midia" element={<Midia />} />

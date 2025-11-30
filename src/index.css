@@ -12,6 +12,7 @@
   --color-green-xbox: #107c10;
   --color-light-red: #107c10;
   --color-yellow-arc: #f1aa1c;
+  --breakpoint-5xl: 160rem;
 }
 html,
 body {

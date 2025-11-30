@@ -10,7 +10,7 @@ export default function Header() {
       <div className="flex justify-between py-3 w-full xl:w-[90%] px-2 lg:px-4">
         <div className="flex gap-7 justify-center items-center">
           <Link to="/" className="flex">
-            <Logo textColor="#130918" />
+            <Logo textcolor="#130918" />
           </Link>
           <nav className="hidden xl:flex">
             <ul className="flex justify-center items-center gap-4 font-barlow font-semibold capitalize cursor-pointer text-xl">

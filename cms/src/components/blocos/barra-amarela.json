@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocos_barra_amarelas",
+  "info": {
+    "displayName": "barra-amarela"
+  },
+  "options": {},
+  "attributes": {
+    "barra_amarela": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

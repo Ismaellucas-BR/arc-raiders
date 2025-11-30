@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocos_thumbnails",
+  "info": {
+    "displayName": "thumbnail"
+  },
+  "options": {},
+  "attributes": {
+    "link_image": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

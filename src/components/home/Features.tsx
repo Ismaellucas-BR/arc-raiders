@@ -15,8 +15,9 @@ export default function Features() {
       imageDesktop:
         "https://arcraiders.com/images/features/features-keyart.jpg",
       ExtraClassSection: "justify-start",
+      ExtraClassDiv: "xl:ml-[7.5rem] 5xl:ml-[12rem]",
       ExtraClassText:
-        "text-[3.75rem] md:text-[97.5px] md:leading-20 xl:text-[5rem] xl:leading-20",
+        "text-[3.75rem] md:text-[97.5px] md:leading-20 xl:leading-20",
     },
     {
       title: "An extraction \nadventure.",
@@ -26,7 +27,8 @@ export default function Features() {
       imageMobile:
         "https://arcraiders.com/images/features/feature-1-mobile.jpg",
       imageDesktop: "http://arcraiders.com/images/features/feature-1.jpg",
-      ExtraClassSection: "justify-end",
+      ExtraClassSection: "justify-end 5xl:items-center",
+      ExtraClassDiv: "5xl:items-end",
       ExtraClassText:
         "text-[3rem] md:text-[3.5rem] md:leading-14 xl:text-[5rem] xl:leading-20",
     },
@@ -34,11 +36,12 @@ export default function Features() {
       title: "Explore an immersive world.",
       content:
         "Lethal and bold but vibrant and beautiful, ARC Raiders offers an inviting take on the post-post-apocalypse. An immersive world built using Unreal Engine 5 where the remnants of Italy's rich history blend with brutal infrastructure for space travel. While lethal machines roam the dangerous surface, the cantina below ground still has food options.",
-      imageBar: <SecondBar extraClassSvg="h-[130px]! w-[6.61px]!" />,
+      imageBar: <SecondBar extraclasssvg="h-[130px]! w-[6.61px]!" />,
       imageMobile:
         "https://arcraiders.com/images/features/feature-2-mobile.jpg",
       imageDesktop: "https://arcraiders.com/images/features/feature-2.jpg",
       ExtraClassSection: "justify-end md:justify-start",
+      ExtraClassDiv: "xl:ml-[7.5rem] 5xl:ml-[12rem]",
       ExtraClassText:
         "text-[3rem] md:text-[3.5rem] md:leading-14 xl:text-[5rem] xl:leading-20",
     },
@@ -50,7 +53,8 @@ export default function Features() {
       imageMobile:
         "https://arcraiders.com/images/features/feature-3-mobile.jpg",
       imageDesktop: "https://arcraiders.com/images/features/feature-3.jpg",
-      ExtraClassSection: "justify-end",
+      ExtraClassSection: "justify-end 5xl:justify-end",
+      ExtraClassDiv: "xl:ml-[7.5rem] 5xl:ml-[12rem] 5xl:items-end",
       ExtraClassText:
         "text-[3rem] md:text-[3.5rem] md:leading-14 xl:text-[5rem] xl:leading-20",
     },
@@ -63,6 +67,7 @@ export default function Features() {
         "https://arcraiders.com/images/features/feature-4-mobile.jpg",
       imageDesktop: "https://arcraiders.com/images/features/feature-4.jpg",
       ExtraClassSection: "justify-end md:justify-start",
+      ExtraClassDiv: "xl:ml-[7.5rem] 5xl:ml-[12rem]",
       ExtraClassText:
         "text-[3rem] md:text-[3.5rem] md:leading-14 xl:text-[5rem] xl:leading-20",
     },
@@ -88,8 +93,9 @@ export default function Features() {
           </div>
 
           {/* 🔹 TEXTO */}
-          <div className="w-full md:w-2/3 lg:w-2/4 p-6 md:p-10 flex flex-col gap-4 absolute ">
-            <div className="flex items-center gap-3">
+          <div
+            className={`w-full md:w-2/3 lg:w-2/4 p-6 md:p-10 flex flex-col gap-4 absolute ${item.ExtraClassDiv}`}>
+            <div className={`flex items-center gap-3 5xl:w-1/2`}>
               {item.imageBar && <div className="w-[10%]">{item.imageBar}</div>}
               <h2
                 className={`font-barlow font-bold  whitespace-pre-line leading-14 ${item.ExtraClassText}`}>
@@ -97,7 +103,7 @@ export default function Features() {
               </h2>
             </div>
 
-            <p className="text-lg opacity-90 text-[1.25rem] md:text-[1rem] font-barlow xl:text-[1.25rem]">
+            <p className="text-lg opacity-90 text-[1.25rem] md:text-[1rem] font-barlow xl:text-[1.25rem] xl:w-3/4 5xl:w-1/2">
               {item.content}
             </p>
           </div>

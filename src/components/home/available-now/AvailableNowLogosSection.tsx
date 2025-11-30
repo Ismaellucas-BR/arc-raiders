@@ -16,7 +16,7 @@ export default function AvailableNowLogosSection(props: PropsAvailable) {
       <div
         className={`flex flex-col justify-center items-center border-t-[5px] border-[#ffbc13] bg-dark-blue w-full py-10 ${props.ExtraClassLogoSection}`}>
         <div className="flex flex-col justify-center items-center w-[90%] gap-5">
-          {props.haveLogo && <Logo textColor="#fff" />}
+          {props.haveLogo && <Logo textcolor="#fff" />}
           <h2 className="font-barlow font-bold text-[#ece2d0] text-[2.5rem] uppercase">
             Disponível agora
           </h2>

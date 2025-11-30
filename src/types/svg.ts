@@ -1,3 +1,3 @@
 export interface SvgProps {
-  extraClassSvg?: string;
+  extraclasssvg?: string;
 }

@@ -3,7 +3,7 @@ import FirstBar from "../svg/FirstBar";
 
 export default function SecondSection() {
   return (
-    <section className="bg-second-section-creator bg-cover bg-no-repeat bg-center flex flex-col justify-center items-center">
+    <section className="bg-second-section-creator bg-cover bg-no-repeat bg-center flex flex-col justify-center items-center max-w-[120rem]">
       <div className="flex flex-col justify-center items-start w-[90%] gap-7 py-7">
         <p className="font-barlow font-medium text-[1.25rem] uppercase lg:text-[1.5rem]">
           De Embarque com amor!
@@ -16,13 +16,13 @@ export default function SecondSection() {
           <span className="text-yellow-arc!">único</span>.
         </span>
         <div>
-          <div className="w-full md:w-2/3 lg:w-3/4 md:p-10 flex flex-col gap-4">
+          <div className="w-full lg:w-3/4 md:py-10 flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-[10%]">
+              <div className="w-[10%] lg:w-[5%]">
                 <FirstBar />
               </div>
               <h2
-                className={`font-barlow font-bold  whitespace-pre-line leading-1 text-[2.5rem] leading-10 lg:text-[3.5rem] lg:leading-14 xl:text-[4rem] xl:leading-16`}>
+                className={`font-barlow font-bold  whitespace-pre-line text-[2.5rem] leading-10 md:text-[3.5rem] md:leading-14 xl:text-[4rem] xl:leading-16`}>
                 Inscreva-se agora. Comece sua jornada como criador...
               </h2>
             </div>

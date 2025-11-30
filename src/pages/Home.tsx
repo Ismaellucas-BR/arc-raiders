@@ -4,11 +4,13 @@ import Features from "../components/home/Features";
 import HeroNoVideo from "../components/home/HeroNoVideo";
 import LastetsNews from "../components/home/LastetsNews";
 import WatchTrailers from "../components/home/WatchTrailers";
+import GridCardNews from "../components/news/GridCardNews";
 
 export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center max-w-[100rem] ">
       <HeroNoVideo />
+      <GridCardNews />
       <LastetsNews />
       <WatchTrailers />
       <Features />

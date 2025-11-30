@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocos_lista_principals",
+  "info": {
+    "displayName": "Lista Principal"
+  },
+  "options": {},
+  "attributes": {
+    "list_title": {
+      "type": "string"
+    },
+    "item_lista": {
+      "type": "component",
+      "component": "blocos.item-lista",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

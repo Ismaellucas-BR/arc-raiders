@@ -3,7 +3,7 @@ import SecondBar from "../svg/SecondBar";
 
 export default function MixtapeSection() {
   return (
-    <section className="bg-mixtape-section bg-cover bg-center bg-no-repeat  flex flex-col justify-center items-center">
+    <section className="bg-mixtape-section bg-cover bg-center bg-no-repeat  flex flex-col justify-center items-center max-w-[120rem]">
       <div className=" flex flex-col justify-center items-center py-10 max-w-[62.5rem]">
         <div className="flex flex-col justify-center items-center gap-7 w-[90%]">
           <div>
@@ -18,7 +18,7 @@ export default function MixtapeSection() {
                     />
                   </div>
                   <div className="w-[2%]">
-                    <SecondBar extraClassSvg="h-[80px]! w-[6.61px]! md:h-[100px]!" />
+                    <SecondBar extraclasssvg="h-[80px]! w-[6.61px]! md:h-[100px]!" />
                   </div>
                   <h2
                     className={`font-barlow font-bold  whitespace-pre-line text-[3rem] leading-12 md:text-[3.5rem] md:leading-14 xl:text-[4rem]`}>
@@ -50,7 +50,7 @@ export default function MixtapeSection() {
                   </div>
                   <div className="flex justify-center items-center gap-3 lg:w-full lg:justify-start">
                     <div className="w-[2%]">
-                      <SecondBar extraClassSvg="h-[80px]! w-[6.61px]! md:h-[100px]!" />
+                      <SecondBar extraclasssvg="h-[80px]! w-[6.61px]! md:h-[100px]!" />
                     </div>
                     <h2
                       className={`font-barlow font-bold  whitespace-pre-line text-[3rem] leading-12 md:text-[3.5rem] md:leading-14 lg:w-fit xl:text-[4rem]`}>

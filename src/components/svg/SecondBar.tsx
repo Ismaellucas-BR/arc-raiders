@@ -4,7 +4,7 @@ const SvgComponent = (props: SvgProps) => (
     xmlns="http://www.w3.org/2000/svg"
     id="Layer_1"
     viewBox="674.85 216.77 17 334.26"
-    className={`${props.extraClassSvg}`}
+    className={`${props.extraclasssvg}`}
     {...props}>
     <defs>
       <style>{".st0{fill:#ece2d0}"}</style>

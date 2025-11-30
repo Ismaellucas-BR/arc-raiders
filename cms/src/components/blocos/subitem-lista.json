@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocos_subitem_listas",
+  "info": {
+    "displayName": "subitem-lista"
+  },
+  "options": {},
+  "attributes": {
+    "subitem_list_text": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

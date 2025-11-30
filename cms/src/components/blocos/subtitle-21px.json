@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocos_subtitle_21pxes",
+  "info": {
+    "displayName": "subtitle_21px"
+  },
+  "options": {},
+  "attributes": {
+    "subtitle_21px": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

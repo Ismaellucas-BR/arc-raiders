@@ -2,7 +2,7 @@ import AccordionSection from "../home/AccordionSection";
 
 export default function Enlist() {
   return (
-    <section className="flex flex-col justify-center items-center bg-bege w-full">
+    <section className="flex flex-col justify-center items-center bg-bege w-full max-w-[120rem]">
       <div className="flex flex-col justify-center items-center gap-5 w-[90%] pt-7">
         <div className="flex justify-center items-center gap-3 w-full">
           <div className="w-[10%] bg-[linear-gradient(90deg,transparent,#130918)] h-1 lg:w-[35%]"></div>
