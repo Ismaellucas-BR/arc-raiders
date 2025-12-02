@@ -14,6 +14,9 @@ export default function LastetsNews() {
         const json = await res.json();
         // console.log("STRAPI DATA:", json.data);
         setNoticias(json.data ?? []);
+        console.log("====================================");
+        console.log(json.data);
+        console.log("====================================");
       } catch (err) {
         console.error("Erro ao carregar notícias:", err);
       } finally {
@@ -32,7 +35,7 @@ export default function LastetsNews() {
         Últimas Notícias
       </h2>
 
-      <div className="flex flex-col items-center justify-center w-[70%] gap-7">
+      <div className="flex flex-col items-center justify-center w-[70%] gap-7 md:w-[90%]">
         <GridCardNews noticias={noticias} />
       </div>
 

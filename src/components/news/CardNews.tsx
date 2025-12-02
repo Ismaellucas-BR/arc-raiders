@@ -23,7 +23,7 @@ export default function CardNews({ title, thumbnail, slug, date }: PropsCard) {
         <div className="w-full h-[100px] md:h-[200px] bg-gray-200 rounded-t-lg" />
       )}
 
-      <div className="flex flex-col justify-center items-start gap-1 py-3 px-4 bg-white rounded-b-lg">
+      <div className="flex flex-col justify-center items-start gap-1 py-3 px-4 bg-white rounded-b-lg h-[102px]">
         <p className="font-barlow font-medium text-dark-blue text-left text-[1.125rem] leading-5">
           {title}
         </p>

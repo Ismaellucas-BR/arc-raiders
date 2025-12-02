@@ -6,13 +6,8 @@ interface Props {
 
 export default function GridCardNews({ noticias = [] }: Props) {
   const lista = Array.isArray(noticias) ? noticias : [];
-
-  if (lista.length === 0) {
-    return <p className="text-white">Nenhuma notícia encontrada.</p>;
-  }
-
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="flex flex-col gap-5 md:flex-wrap md:flex-row md:justify-center md:items-center">
       {lista.map((n: any) => {
         // se seus dados vêm dentro de item.attributes, ajusta aqui:
         const source = n.attributes ?? n;
@@ -54,13 +49,15 @@ export default function GridCardNews({ noticias = [] }: Props) {
             : "";
 
         return (
-          <CardNews
-            key={n.id}
-            title={title}
-            thumbnail={thumbSrc || undefined}
-            date={date}
-            slug={slug}
-          />
+          <div key={n.id} className="w-full md:w-[45%] xl:w-[22%]">
+            <CardNews
+              key={n.id}
+              title={title}
+              thumbnail={thumbSrc || undefined}
+              date={date}
+              slug={slug}
+            />
+          </div>
         );
       })}
     </div>

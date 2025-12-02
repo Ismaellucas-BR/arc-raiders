@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
 // TIPOS --------------------------
@@ -103,26 +103,15 @@ function buildYouTubeEmbed(urlOrFragment: string) {
   return "";
 }
 
-/**
- * Normaliza um slug/string:
- * - converte para lowercase
- * - troca underscores por hífen (padronizamos pra '-')
- * - troca qualquer sequência de espaços por '-'
- * - remove caracteres inválidos (mantém a-z, 0-9, '-' e '_')
- */
 function normalizeSlug(raw?: string | null) {
   if (!raw) return "";
-  return (
-    String(raw)
-      .toLowerCase()
-      .trim()
-      .replace(/_/g, "-") // underscores → hífen
-      .replace(/\s+/g, "-") // espaços → hífen
-      // remover caracteres que não queremos (mantemos letras, números, hífen)
-      .replace(/[^a-z0-9-]/g, "")
-      // colapsa múltiplos hífens consecutivos
-      .replace(/-+/g, "-")
-  );
+  return String(raw)
+    .toLowerCase()
+    .trim()
+    .replace(/_/g, "-")
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "")
+    .replace(/-+/g, "-");
 }
 
 // COMPONENTE -----------------------
@@ -143,35 +132,24 @@ export default function NewsSingle() {
           "http://localhost:1337/api/noticias?locale=en&populate=*"
         );
         const json = await res.json();
-        // DEBUG: descomente se precisar inspecionar a resposta
-        // console.log("strapi json:", json);
 
         const normalizedParam = normalizeSlug(slug);
-
-        // json.data pode ser array
         const items = Array.isArray(json.data) ? json.data : [];
 
-        // procura no array de noticias um item cujo Header_noticia contenha um bloco "blocos.slug"
         const found = items.find((item: any) => {
-          // header pode estar em attributes.Header_noticia ou direto Header_noticia dependendo do shape
           const headerBlocks: any[] =
             item.attributes?.Header_noticia ?? item.Header_noticia ?? [];
 
           if (!Array.isArray(headerBlocks)) return false;
 
-          // procurar bloco do tipo slug dentro do headerBlocks
           for (const b of headerBlocks) {
             if (!b || typeof b !== "object") continue;
-            // bloco do tipo slug pode ser { __component: "blocos.slug", slug: "..." }
+
             if (b.__component === "blocos.slug") {
               const rawSlug = (b.slug ?? b?.value ?? "").toString();
               const normalizedDataSlug = normalizeSlug(rawSlug);
 
-              // compara strings normalizadas
               if (normalizedDataSlug === normalizedParam) return true;
-
-              // adicional: aceitar se troca - por _ etc (normalizamos ambos para '-')
-              // já feito pela normalizeSlug — portanto suficiente
             }
           }
 
@@ -186,7 +164,7 @@ export default function NewsSingle() {
           setNoticia({
             id: found.id,
             Header_noticia: headerBlocks,
-            ...found.attributes, // caso precise outros atributos
+            ...found.attributes,
           });
         }
       } catch (e) {
@@ -214,7 +192,7 @@ export default function NewsSingle() {
                 <h1
                   key={`h1-${block.id}`}
                   className="font-barlow text-[2rem] font-bold leading-10 uppercase mb-4">
-                  {(block as BlocoTitle).title}
+                  {block.title}
                 </h1>
               );
 
@@ -223,7 +201,7 @@ export default function NewsSingle() {
                 <h2
                   key={`h2-${block.id}`}
                   className="text-2xl font-semibold mt-6 mb-3">
-                  {(block as BlocoSubtitle).subtitle}
+                  {block.subtitle}
                 </h2>
               );
 
@@ -232,7 +210,7 @@ export default function NewsSingle() {
                 <p
                   key={`p-${block.id}`}
                   className="font-barlow font-medium text-base text-dark-blue mb-1">
-                  {(block as BlocoDate).date_field}
+                  {block.date_field}
                 </p>
               );
 
@@ -240,87 +218,105 @@ export default function NewsSingle() {
               return (
                 <div
                   key={`barra-${block.id}`}
-                  className="bg-yellow-arc h-[2px] my-4"
-                  style={{
-                    color: "#111",
-                    fontWeight: 700,
-                  }}>
-                  {(block as BlocoBarra).barra_amarela ?? ""}
+                  className="bg-yellow-arc h-[2px] my-4">
+                  {block.barra_amarela ?? ""}
                 </div>
               );
 
+            /* ===========================================
+             * CONTENT COM SUPORTE TOTAL A LISTAS
+             * =========================================== */
             case "blocos.content":
               return (
                 <div key={`div-${block.id}`} className="prose prose-lg mb-4">
-                  {(block as BlocoContent).content.map((node, ni) => {
-                    const isEmptyParagraph =
-                      node.type === "paragraph" &&
-                      node.children.length === 1 &&
-                      (node.children[0] as any).type === "text" &&
-                      (
-                        (node.children[0] as RichChildText).text ?? ""
-                      ).trim() === "";
-
-                    if (isEmptyParagraph) {
-                      return <br key={`br-${block.id}-${ni}`} />;
+                  {block.content.map((node: any, ni: number) => {
+                    // UL (unordered list)
+                    if (node.type === "list" && node.format === "unordered") {
+                      return (
+                        <ul
+                          key={`ul-${block.id}-${ni}`}
+                          className="list-disc pl-6 mb-4 font-barlow text-[1.125rem] font-medium">
+                          {node.children.map((li: any, lii: number) => (
+                            <li
+                              key={`li-${block.id}-${ni}-${lii}`}
+                              className="mb-1">
+                              {li.children.map((child: any, ci: number) => (
+                                <span
+                                  key={ci}
+                                  className={child.bold ? "font-bold" : ""}>
+                                  {child.text}
+                                </span>
+                              ))}
+                            </li>
+                          ))}
+                        </ul>
+                      );
                     }
 
+                    // PARÁGRAFO NORMAL
                     if (node.type === "paragraph") {
+                      // 🔥 SE O PARÁGRAFO ESTIVER VAZIO, RETORNA <br />
+                      const isEmpty =
+                        !node.children ||
+                        node.children.length === 0 ||
+                        node.children.every(
+                          (c: any) => !c.text || c.text.trim() === ""
+                        );
+
+                      if (isEmpty) {
+                        return <br key={`br-${block.id}-${ni}`} />;
+                      }
+
                       return (
                         <p
                           key={`p-${block.id}-${ni}`}
                           className="font-barlow font-medium text-[1.125rem]">
-                          {node.children.map((child, ci) => {
-                            if ((child as RichChildText).type === "text") {
-                              return (child as RichChildText).text;
-                            }
+                          {node.children.map((child: any, ci: number) => {
+                            if (child.type === "text")
+                              return (
+                                <span
+                                  key={ci}
+                                  className={child.bold ? "font-bold" : ""}>
+                                  {child.text}
+                                </span>
+                              );
 
-                            if ((child as RichChildLink).type === "link") {
-                              const link = child as RichChildLink;
-                              const innerText =
-                                link.children?.map((c) => c.text).join("") ??
-                                link.url;
+                            if (child.type === "link") {
+                              const inner =
+                                child.children
+                                  ?.map((c: any) => c.text)
+                                  .join("") ?? child.url;
+
                               return (
                                 <a
-                                  key={`a-${block.id}-${ni}-${ci}`}
-                                  href={link.url}
-                                  target={link.target ?? "_blank"}
+                                  key={ci}
+                                  href={child.url}
+                                  target={child.target ?? "_blank"}
                                   rel="noreferrer">
-                                  {innerText}
+                                  {inner}
                                 </a>
                               );
                             }
 
-                            return (child as any).text ?? null;
+                            return null;
                           })}
                         </p>
                       );
                     }
 
-                    return (
-                      <div key={`node-${block.id}-${ni}`} className="mb-3">
-                        {node.children.map((child, ci) =>
-                          (child as any).text ? (
-                            <span key={`span-${block.id}-${ni}-${ci}`}>
-                              {(child as any).text}
-                            </span>
-                          ) : null
-                        )}
-                      </div>
-                    );
+                    return null;
                   })}
                 </div>
               );
 
             case "blocos.video": {
-              const videoField = (block as BlocoVideo).video ?? "";
-              const embedUrl = buildYouTubeEmbed(videoField);
+              const embedUrl = buildYouTubeEmbed(block.video ?? "");
 
               if (!embedUrl) {
                 return (
                   <p key={`video-link-${block.id}`} className="my-6">
-                    <a href={videoField} target="_blank" rel="noreferrer">
-                      {videoField}
+                    <a href={block.video} target="_blank" rel="noreferrer">
+                      {block.video}
                     </a>
                   </p>
                 );
@@ -341,8 +337,41 @@ export default function NewsSingle() {
               );
             }
 
+            // SUBTITLE 21PX
+            case "blocos.subtitle-21px":
+              return (
+                <h3
+                  key={`subtitle21-${block.id}`}
+                  className="font-barlow text-[21px] font-bold leading-snug mt-6 mb-3">
+                  {block.subtitle_21px}
+                </h3>
+              );
+            case "blocos.subtitle-18px":
+              return (
+                <h2
+                  key={`subtitle18-${block.id}`}
+                  className="font-barlow text-[18px] font-bold leading-snug mt-6 mb-3">
+                  {block.subtitle_18px}
+                </h2>
+              );
+
+            // IMAGE SINGLE
+            case "blocos.image":
+              return (
+                <div
+                  key={`img-${block.id}`}
+                  className="my-6 w-full flex justify-center">
+                  <img
+                    src={block.image_single}
+                    alt=""
+                    className="w-full h-auto"
+                  />
+                </div>
+              );
+
+            // DEFAULT ----------------------------
             default:
-              return <div key={`div2-${block.id}`} />;
+              return <div key={`empty-${block.id}`} />;
           }
         })}
       </div>
