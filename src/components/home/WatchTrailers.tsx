@@ -61,7 +61,9 @@ export default function WatchTrailers() {
   }, [currentIndex]);
 
   return (
-    <section className="flex flex-col items-center justify-center gap-7 pb-10 max-w-[100rem] xl:w-full bg-bege w-full py-10 md:gap-10 lg:pb-20 lg:py-0 xl:py-10 xl:px-12">
+    <section
+      id="watch"
+      className="flex flex-col items-center justify-center gap-7 pb-10 max-w-[100rem] xl:w-full bg-bege w-full py-10 md:gap-10 lg:pb-20 lg:py-0 xl:py-10 xl:px-12 scroll-mb-[320px]">
       <h2 className="text-dark-blue font-barlow font-bold text-center text-[3rem] uppercase leading-12 w-full px-4 md:text-[4rem] lg:text-[5rem] xl:leading-24">
         Veja os trailers
       </h2>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import GridCardNews from "../news/GridCardNews"; // <-- certifique-se que o caminho está correto
+import { Link } from "react-router";
 
 export default function LastetsNews() {
   const [noticias, setNoticias] = useState<any[]>([]);
@@ -40,11 +41,11 @@ export default function LastetsNews() {
       </div>
 
       <div className="px-4 w-full flex flex-col justify-center items-center lg:w-[60%]">
-        <a
-          href=""
-          className="w-full rounded-sm uppercase font-barlow font-semibold bg-[#f1aa1c] text-dark-blue text-center px-10 py-2 text-[1.125rem]">
+        <Link
+          to="/news"
+          className="w-full rounded-sm uppercase font-barlow font-semibold bg-[#f1aa1c] text-dark-blue text-center px-10 py-2 text-[1.125rem] cursor-pointer">
           Veja mais artigos
-        </a>
+        </Link>
       </div>
     </section>
   );

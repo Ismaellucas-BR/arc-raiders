@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import AccordionSection from "../components/home/AccordionSection";
 import AvailableSectionComplete from "../components/home/available-now/AvailableSectionComplete";
 import Features from "../components/home/Features";
@@ -7,11 +8,30 @@ import WatchTrailers from "../components/home/WatchTrailers";
 import GridCardNews from "../components/news/GridCardNews";
 
 export default function Home() {
+  // 🔥 Scroll automático ao carregar a Home
+  useEffect(() => {
+    const section = localStorage.getItem("scrollTo");
+
+    if (section) {
+      // Espera o React renderizar tudo
+      const timeout = setTimeout(() => {
+        const el = document.getElementById(section);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        localStorage.removeItem("scrollTo");
+      }, 300); // <- delay necessário para garantir q o WatchTrailers já existe
+
+      return () => clearTimeout(timeout);
+    }
+  }, []);
+
   return (
-    <div className="flex flex-col justify-center items-center max-w-[100rem] ">
+    <div className="flex flex-col justify-center items-center max-w-[100rem]">
       <HeroNoVideo />
       <GridCardNews />
       <LastetsNews />
+      {/* PRECISA TER ESSE ID PARA FUNCIONAR */}
       <WatchTrailers />
       <Features />
       <AvailableSectionComplete />

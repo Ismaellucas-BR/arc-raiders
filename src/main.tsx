@@ -13,10 +13,17 @@ import News from "./pages/News";
 import TwitchDropsPage from "./pages/TwitchDrops";
 import CreatorProgram from "./pages/CreatorProgram";
 import NewsSingle from "./components/news/NewsSingle";
+
+// ⬇️ IMPORTANTE: importe o ScrollToHash
+import ScrollToHash from "./components/ScrollToHash";
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <LanguageProvider>
       <BrowserRouter>
+        {/* ⬇️ Scroll suave para hashes */}
+        <ScrollToHash />
+
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />

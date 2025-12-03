@@ -23,11 +23,16 @@ export default function HeroNoVideo() {
           <XboxLogo width={152} height={24} />
           <NvidiaLogo width={79.56} height={24} />
         </div>
-        <Link
-          to=""
-          className="border border-bege rounded-sm uppercase font-barlow font-semibold text-bege px-10 py-2 text-[1.125rem]">
+        <button
+          onClick={() => {
+            const section = document.querySelector("#watch");
+            if (section) {
+              section.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+          className="border border-bege rounded-sm uppercase font-barlow font-semibold text-bege px-10 py-2 text-[1.125rem] cursor-pointer">
           Assista ao trailer
-        </Link>
+        </button>
       </div>
     </section>
   );

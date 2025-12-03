@@ -74,7 +74,7 @@ export default function Features() {
   ];
 
   return (
-    <section className="flex flex-col w-full">
+    <section id="features" className="flex flex-col w-full">
       {Data.map((item, index) => (
         <section
           key={index}
