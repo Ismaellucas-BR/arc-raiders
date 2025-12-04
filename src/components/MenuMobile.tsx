@@ -10,7 +10,9 @@ import {
 import { AlignJustify } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./translation/LanguageSwitcher";
+import { useNavigate } from "react-router";
 export default function MenuMobile() {
+  const navigate = useNavigate();
   const { t } = useTranslation("common");
   return (
     <Sheet>
@@ -24,26 +26,57 @@ export default function MenuMobile() {
           </SheetTitle>
           <SheetDescription></SheetDescription>
         </SheetHeader>
-        <nav className=" text-white">
-          <ul className="flex flex-col justify-start items-start font-inter uppercase cursor-pointer text-xl pl-2">
-            <li className="">
-              <Link className="span-effect text-white" to={"/agents"}>
-                {t("Agents")}
+        <nav className="flex flex-col gap-3">
+          <ul className="flex flex-col justify-center items-start gap-4 font-barlow font-semibold capitalize cursor-pointer text-xl pl-2">
+            <li>
+              <button
+                className="span-effect text-[1.125rem]! uppercase text-white"
+                onClick={() => {
+                  if (location.pathname !== "/") {
+                    // Se NÃO estiver na Home → navega para a Home com um state
+                    navigate("/", { state: { scrollTo: "watch" } });
+                  } else {
+                    // Se já estiver na Home → rola diretamente
+                    const section = document.querySelector("#watch");
+                    if (section) section.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}>
+                News {t("Games")}
+              </button>
+            </li>
+            <li>
+              <button
+                className="span-effect text-[1.125rem]! uppercase text-white"
+                onClick={() => {
+                  navigate("/#watch"); // navega para a home com hash
+                }}>
+                Media {t("Games")}
+              </button>
+            </li>
+
+            <li>
+              <button
+                className="span-effect text-[1.125rem]! uppercase text-white"
+                onClick={() => {
+                  navigate("/#features");
+                }}>
+                features {t("Games")}
+              </button>
+            </li>
+
+            <li>
+              <Link
+                className="span-effect text-[1.125rem]! uppercase text-white"
+                to="/twitch-drops">
+                Twitch Drops
               </Link>
             </li>
-            <li className="">
-              <Link className="span-effect" to={"/maps"}>
-                {t("Maps")}
-              </Link>
-            </li>
-            <li className="">
-              <Link className="span-effect" to={"/arsenal"}>
-                {t("Arsenal")}
-              </Link>
-            </li>
-            <li className="">
-              <Link className="span-effect" to={"/midia"}>
-                {t("Media")}
+
+            <li>
+              <Link
+                className="span-effect text-[1.125rem]! uppercase text-white"
+                to="/creator-program">
+                Creator Program
               </Link>
             </li>
             <li>

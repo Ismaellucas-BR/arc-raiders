@@ -3,7 +3,7 @@ import SecondBar from "../svg/SecondBar";
 
 export default function MixtapeSection() {
   return (
-    <section className="bg-mixtape-section bg-cover bg-center bg-no-repeat  flex flex-col justify-center items-center max-w-[120rem]">
+    <section className="bg-mixtape-section bg-cover bg-center bg-no-repeat  flex flex-col justify-center items-center max-w-[100rem]">
       <div className=" flex flex-col justify-center items-center py-10 max-w-[62.5rem]">
         <div className="flex flex-col justify-center items-center gap-7 w-[90%]">
           <div>

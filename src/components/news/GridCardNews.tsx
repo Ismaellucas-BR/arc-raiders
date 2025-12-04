@@ -1,15 +1,24 @@
+import { useEffect } from "react";
 import CardNews from "./CardNews";
 
 interface Props {
-  noticias?: any[]; // vem do parent; pode ser undefined
+  noticias?: any[];
+  onLoaded?: () => void; // ⬅️ importante!
 }
 
-export default function GridCardNews({ noticias = [] }: Props) {
+export default function GridCardNews({ noticias = [], onLoaded }: Props) {
   const lista = Array.isArray(noticias) ? noticias : [];
+
+  // ⬅️ Quando a lista tiver pelo menos 1 item, avisa que terminou
+  useEffect(() => {
+    if (lista.length > 0) {
+      onLoaded?.();
+    }
+  }, [lista, onLoaded]);
+
   return (
     <div className="flex flex-col gap-5 md:flex-wrap md:flex-row md:justify-center md:items-center">
       {lista.map((n: any) => {
-        // se seus dados vêm dentro de item.attributes, ajusta aqui:
         const source = n.attributes ?? n;
 
         const header = Array.isArray(source.Header_noticia)
@@ -18,11 +27,11 @@ export default function GridCardNews({ noticias = [] }: Props) {
 
         const title = header.find((b: any) => b.title)?.title ?? "Sem título";
 
-        // thumbnail pode ser link direto (link_image) ou media - tentamos vários formatos
         const thumbBlock =
           header.find((b: any) => b.__component === "blocos.thumbnail") ??
           header.find((b: any) => b.thumbnail) ??
           header.find((b: any) => b.link_image);
+
         const thumbnail =
           thumbBlock?.link_image ??
           thumbBlock?.thumbnail ??
@@ -40,7 +49,6 @@ export default function GridCardNews({ noticias = [] }: Props) {
           .replace(/[^a-z0-9-]/g, "")
           .replace(/-+/g, "-");
 
-        // se thumbnail for relativo (p.ex. /uploads/...), prefixa
         const thumbSrc =
           thumbnail && thumbnail.startsWith("http")
             ? thumbnail
@@ -51,7 +59,6 @@ export default function GridCardNews({ noticias = [] }: Props) {
         return (
           <div key={n.id} className="w-full md:w-[45%] xl:w-[22%]">
             <CardNews
-              key={n.id}
               title={title}
               thumbnail={thumbSrc || undefined}
               date={date}

@@ -19,19 +19,29 @@ export default function Header() {
           <nav className="hidden xl:flex">
             <ul className="flex justify-center items-center gap-4 font-barlow font-semibold capitalize cursor-pointer text-xl">
               <li>
-                <Link
-                  to="/#watch"
-                  className="span-effect text-[1.125rem] uppercase text-dark-blue">
-                  Media
-                </Link>
+                <button
+                  className="span-effect text-[1.125rem]! uppercase text-dark-blue"
+                  onClick={() => {
+                    navigate("/#news"); // navega para a home com hash
+                  }}>
+                  News {t("Games")}
+                </button>
+              </li>
+              <li>
+                <button
+                  className="span-effect text-[1.125rem]! uppercase text-dark-blue"
+                  onClick={() => {
+                    navigate("/#watch"); // navega para a home com hash
+                  }}>
+                  Media {t("Games")}
+                </button>
               </li>
 
               <li>
                 <button
                   className="span-effect text-[1.125rem]! uppercase text-dark-blue"
                   onClick={() => {
-                    const section = document.querySelector("#features");
-                    if (section) section.scrollIntoView({ behavior: "smooth" });
+                    navigate("/#features");
                   }}>
                   features {t("Games")}
                 </button>

@@ -3,7 +3,7 @@ import FirstBar from "../svg/FirstBar";
 
 export default function SecondSection() {
   return (
-    <section className="bg-second-section-creator bg-cover bg-no-repeat bg-center flex flex-col justify-center items-center max-w-[120rem]">
+    <section className="bg-second-section-creator bg-cover bg-no-repeat bg-center flex flex-col justify-center items-center max-w-[100rem]">
       <div className="flex flex-col justify-center items-start w-[90%] gap-7 py-7">
         <p className="font-barlow font-medium text-[1.25rem] uppercase lg:text-[1.5rem]">
           De Embarque com amor!

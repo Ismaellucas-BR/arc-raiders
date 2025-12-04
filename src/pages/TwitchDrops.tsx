@@ -3,7 +3,7 @@ import HeroSection from "../components/twitchDrops/HeroSection";
 
 export default function TwitchDropsPage() {
   return (
-    <main className="flex flex-col justify-center items-center w-full">
+    <main className="flex flex-col justify-center items-center w-full max-w-[100rem]">
       <HeroSection />
       <section className="bg-bege w-full">
         <AccordionSection
