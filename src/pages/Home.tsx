@@ -8,8 +8,9 @@ import WatchTrailers from "../components/home/WatchTrailers";
 import { useLocation } from "react-router";
 import ScrollToHash from "../components/ScrollToHash";
 import SkeletonHome from "../skeletons/SkeletonHome";
-
+import { useTranslation } from "react-i18next";
 export default function Home() {
+  const { t } = useTranslation("home");
   const [noticias, setNoticias] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const location = useLocation();
@@ -68,44 +69,32 @@ export default function Home() {
         title="Perguntas frequentes"
         items={[
           {
-            question: "O que está incluído na Edição Deluxe de ARC Raiders?",
-            answer:
-              "A Edição Deluxe de ARC Raiders inclui todo o conteúdo da Edição Padrão, além do Traje Valente e suas variantes de cor, Mochila Pathfinder, Acessório de Mochila Cobertor Enrolado, Cosmético Facial Cicatriz Labial, Gesto Pistola de Dedo: Tiro Rápido, Skin Cowboy Scrappy e 2.400 Fichas de Raider.",
+            question: t("Acordion.quetion1"),
+            answer: t("Acordion.answer1"),
           },
           {
-            question:
-              "Posso fazer um upgrade da minha compra da Edição Padrão de ARC Raiders?",
-            answer:
-              "Após o lançamento, você poderá adquirir uma atualização para a Edição Deluxe e receber o Traje Valente e suas variantes de cor, a Mochila Pathfinder, o Acessório de Mochila Cobertor Enrolado, o Cosmético Facial Cicatriz Labial, o Gesto Pistola de Dedo: Tiro Rápido, a Skin Cowboy Scrappy e 2.400 Fichas de Saqueador.",
+            question: t("Acordion.quetion2"),
+            answer: t("Acordion.answer2"),
           },
           {
-            question:
-              "A atualização para a Edição Deluxe após o lançamento desbloqueará o Pacote Astro?",
-            answer:
-              "O Pacote Astro só é desbloqueado através da pré-venda da Edição Deluxe e não estará incluído em atualizações pós-lançamento. O Pacote Patinho da Sorte só pode ser desbloqueado uma vez; uma atualização para a Edição Deluxe após o lançamento não desbloqueará um segundo Pacote Patinho da Sorte. Os bônus de pré-venda não estarão mais disponíveis, exceto através de quaisquer pacotes NVIDIA restantes.",
+            question: t("Acordion.quetion3"),
+            answer: t("Acordion.answer3"),
           },
           {
-            question:
-              "Eu fiz a pré-encomenda de ARC Raiders. Quando receberei meu bônus de pré-encomenda?",
-            answer:
-              "Se você fez a pré-encomenda da Edição Standard ou Deluxe de ARC Raiders, seus bônus de pré-encomenda serão desbloqueados automaticamente no jogo no lançamento.",
+            question: t("Acordion.quetion4"),
+            answer: t("Acordion.answer4"),
           },
           {
-            question:
-              "É possível desbloquear os bônus de pré-venda após o lançamento?",
-            answer:
-              "Os pacotes Lucky Duck, Bruiser e Astro eram bônus de pré-venda e não estarão disponíveis após o lançamento. Os bônus de pré-venda não estarão mais disponíveis, exceto por meio de quaisquer pacotes NVIDIA restantes.",
+            question: t("Acordion.quetion5"),
+            answer: t("Acordion.answer5"),
           },
           {
-            question:
-              "Participei do Sever Slam. É possível desbloquear minha recompensa após o lançamento?",
-            answer:
-              "Sim. A mochila 'Server Slammer' pode ser desbloqueada com a confirmação do ID da Embark.",
+            question: t("Acordion.quetion6"),
+            answer: t("Acordion.answer6"),
           },
           {
-            question: "Preços regionais",
-            answer:
-              "Estamos trabalhando para reduzir o preço dos ARC Raiders em diversos locais para garantir um preço mais justo para todos (lista abaixo). Essa mudança entrará em vigor a partir de 7 de outubro. Se você já fez uma compra em um desses locais, receberá um reembolso parcial automaticamente, embora isso possa levar alguns dias, dependendo da plataforma. Os novos preços serão aplicados em: Brasil, Chile, China, Colômbia, Costa Rica, Índia, Indonésia, Malásia, Peru,Filipinas, Taiwan, Tailândia, Ucrânia, Uruguai e Vietnã. No momento, não estão previstos outros ajustes de preço.",
+            question: t("Acordion.quetion7"),
+            answer: t("Acordion.answer7"),
           },
         ]}
       />

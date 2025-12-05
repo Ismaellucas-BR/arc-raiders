@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-
+import { useTranslation } from "react-i18next";
 export default function BackToTopButton() {
+  const { t } = useTranslation("common");
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -58,7 +59,7 @@ export default function BackToTopButton() {
 
       {/* Texto */}
       <span className="hidden sm:inline-block text-sm font-medium text-indigo-900">
-        Voltar para cima
+        {t("BackToTop")}
       </span>
     </button>
   );

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import ArrowLeft from "../svg/ArrowLeft";
 import ArrowRight from "../svg/ArrowRight";
 import PlayYoutube from "../svg/PlayYoutube";
-
+import { useTranslation } from "react-i18next";
 const videos = [
   {
     id: 1,
@@ -32,6 +32,7 @@ const videos = [
 ];
 
 export default function WatchTrailers() {
+  const { t } = useTranslation("home");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -65,7 +66,7 @@ export default function WatchTrailers() {
       id="watch"
       className="flex flex-col items-center justify-center gap-7 pb-10 max-w-[100rem] xl:w-full bg-bege w-full py-10 md:gap-10 lg:pb-20 lg:py-0 xl:py-10 xl:px-12">
       <h2 className="text-dark-blue font-barlow font-bold text-center text-[3rem] uppercase leading-12 w-full px-4 md:text-[4rem] lg:text-[5rem] xl:leading-24">
-        Veja os trailers
+        {t("WatchTrailers")}
       </h2>
       <div className="flex justify-center items-center gap-7 md:w-[85%]">
         <button

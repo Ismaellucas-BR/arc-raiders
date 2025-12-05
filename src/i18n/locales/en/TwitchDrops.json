@@ -1,0 +1,21 @@
+{
+  "EarnInGame": "Earn in-game rewards by watching ARC Raiders streams on Twitch!",
+  "Acordion": {
+    "quetion1": "What are Twitch Drops?",
+    "answer1": "Twitch Drops are rewards given to people who tune in to special Twitch streams. By linking your Twitch account to Embark ID and watching Drops Enabled streamers during a given timeframe, you will be awarded in-game cosmetic items!",
+    "quetion2": "How do I link my Twitch account to Embark ID?",
+    "answer2": "You can link your Twitch account by logging in to Embark ID. Once logged in, please go to Connected platforms and make sure your Twitch account is linked, as well as the platform you play on.",
+    "quetion3": "Which streams do I need to watch to get drops?",
+    "answer3": "All ARC Raiders streams with the Drops Enabled tag will count towards earning drops. All currently active streams and their tags can be seen on this Twitch page.",
+    "quetion4": "When and how will I receive my in-game items?",
+    "answer4": "You will receive a notification on Twitch when you have been awarded the items. Once awarded, you will have to claim the reward within Twitch before the end of the Twitch Drops campaign. If you are already logged in to the game, you’ll need to log out and log back in.",
+    "quetion5": "Is there any way to check my progress towards the next drop?",
+    "answer5": "You can track your progress on the Twitch Drops Inventory page.",
+    "quetion6": "Can I earn drops faster or more often by watching more than one channel at a time?",
+    "answer6": "No, you will only be eligible to receive a drop for one active channel at a time. Watching more than one channel simultaneously will not result in more drops.",
+    "quetion7": "How long does it take for drops to show up in my game inventory?",
+    "answer7": "Your reward should be redeemable in-game as soon as you have claimed it (by pressing the claim button). You will receive a notification on Twitch when you have been awarded the items.",
+    "quetion8": "Do I need Twitch Prime to be eligible?",
+    "answer8": "Nope! You just need a Twitch account that is linked to your Embark ID and to have ARC Raiders on one of the supported platforms."
+  }
+}

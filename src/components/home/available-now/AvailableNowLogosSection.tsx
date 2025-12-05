@@ -4,13 +4,14 @@ import SteamLogo from "../../svg/SteamLogo";
 import PS5Logo from "../../svg/PS5Logo";
 import XboxLogo from "../../svg/XboxLogo";
 import GeForce from "../../svg/NvidiaLogo";
-
+import { useTranslation } from "react-i18next";
 interface PropsAvailable {
   haveLogo?: boolean;
   ExtraClassLogoSection?: string;
 }
 
 export default function AvailableNowLogosSection(props: PropsAvailable) {
+  const { t } = useTranslation("home");
   return (
     <section>
       <div
@@ -18,14 +19,14 @@ export default function AvailableNowLogosSection(props: PropsAvailable) {
         <div className="flex flex-col justify-center items-center w-[90%] gap-5">
           {props.haveLogo && <Logo textcolor="#fff" />}
           <h2 className="font-barlow font-bold text-[#ece2d0] text-[2.5rem] uppercase">
-            Disponível agora
+            {t("h1HeroSection")}
           </h2>
           <div className="flex flex-col justify-center items-center gap-3 w-full">
             <div className="flex justify-center items-center w-full gap-3">
               <div className="w-[20%] bg-[linear-gradient(90deg,transparent,#ece2d0)] h-[1px]"></div>
               <div>
                 <span className="font-barlow font-normal text-[1.115rem] uppercase text-nowrap">
-                  Selecione sua plataforma
+                  {t("SelectYourPlatform")}
                 </span>
               </div>
               <div className="w-[20%] bg-[linear-gradient(90deg,transparent,#ece2d0)] h-[1px] rotate-180"></div>

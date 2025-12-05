@@ -3,13 +3,12 @@ import Logo from "../components/svg/Logo";
 import { Link, useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../components/translation/LanguageSwitcher";
-import { HashLink } from "react-router-hash-link";
 export default function Header() {
   const navigate = useNavigate();
   const { t } = useTranslation("common");
 
   return (
-    <header className="flex flex-col justify-center items-start bg-[#ece2d0] w-full xl:h-[3.875rem] max-w-[100rem]">
+    <header className="sticky top-0 z-20 bg-[#ece2d0] h-[3.875rem] flex flex-col justify-center items-start  w-full max-w-[100rem]">
       <div className="flex justify-between py-3 w-full xl:w-[90%] px-2 lg:px-4">
         <div className="flex gap-7 justify-center items-center">
           <Link to="/" className="flex">
@@ -22,9 +21,9 @@ export default function Header() {
                 <button
                   className="span-effect text-[1.125rem]! uppercase text-dark-blue"
                   onClick={() => {
-                    navigate("/#news"); // navega para a home com hash
+                    navigate("/#news");
                   }}>
-                  News {t("Games")}
+                  {t("News")}
                 </button>
               </li>
               <li>
@@ -33,7 +32,7 @@ export default function Header() {
                   onClick={() => {
                     navigate("/#watch"); // navega para a home com hash
                   }}>
-                  Media {t("Games")}
+                  {t("Media")}
                 </button>
               </li>
 
@@ -43,7 +42,7 @@ export default function Header() {
                   onClick={() => {
                     navigate("/#features");
                   }}>
-                  features {t("Games")}
+                  {t("Features")}
                 </button>
               </li>
 
@@ -59,7 +58,7 @@ export default function Header() {
                 <Link
                   className="span-effect text-[1.125rem]! uppercase text-dark-blue"
                   to="/creator-program">
-                  Creator Program
+                  {t("Creator-Program")}
                 </Link>
               </li>
             </ul>

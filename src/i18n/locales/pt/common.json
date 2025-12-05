@@ -1,15 +1,11 @@
 {
-  "Games": "Jogos",
-  "Devices": "Dispositivos",
-  "Play": "Jogar",
+  "Features": "Características",
+  "Creator-Program": "Programa para Criadores",
   "Media": "Mídia",
   "News": "Notícia",
-  "questionMobileMenu": "O que você está procurando?",
-  "discoverTheGame": "Conheça o jogo",
-  "Function": "FUNÇÃO",
-  "specialSkills": "Habilidades especiais",
-  "chooseYourWeapon": "Escolha a sua arma",
-  "SeeMore": "Veja mais",
+  "BackToTop": "Voltar para cima",
+  "FrequentlyAskedQuestions": "Perguntas frequentes",
+  "LearnMore": "Saber Mais",
   "alert": {
     "titulo": "Atenção",
     "subtitulo": "Este site tem caráter estudantil. Nenhuma informação aqui deve ser interpretada ou utilizada com fins comerciais."

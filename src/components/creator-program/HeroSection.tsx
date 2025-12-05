@@ -1,6 +1,8 @@
 import Logo from "../svg/Logo";
 import { Link } from "react-router";
+import { useTranslation } from "react-i18next";
 export default function HeroSection() {
+  const { t } = useTranslation(["CreatorProgram", "common"]);
   return (
     <section className="relative hero-creator flex flex-col justify-center items-center bg-center bg-no-repeat bg-cover w-full h-[100vh] max-w-[100rem]">
       <div className="bg-black/50 absolute inset-0 z-0 h-full"></div>
@@ -10,19 +12,18 @@ export default function HeroSection() {
             <Logo textcolor="#fff" />
           </div>
           <h2 className="text-[#ece2d0] text-[3rem] md:text-[3.5rem] xl:text-[5rem] text-center leading-12 uppercase font-bold md:leading-14 xl:leading-20">
-            Programa Embarque para Criadores
+            {t("CreatorProgram:heroTitle")}
           </h2>
         </div>
         <div className="flex gap-x-7 gap-y-3 justify-center">
           <p className="font-barlow text-[1.125rem] font-medium text-center leading-6 md:text-[1.25rem] xl:text-[1.5rem] w-[85%]">
-            Tenha acesso a vantagens e oportunidades exclusivas para desenvolver
-            suas habilidades e ampliar seu público.
+            {t("CreatorProgram:subTitle")}
           </p>
         </div>
         <Link
           to=""
           className="bg-yellow-arc text-dark-blue rounded-sm uppercase font-barlow font-semibold px-10 py-3 text-[1.125rem]">
-          Saber Mais
+          {t("common:LearnMore")}
         </Link>
       </div>
     </section>

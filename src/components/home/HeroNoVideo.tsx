@@ -4,8 +4,9 @@ import EpicLogo from "../svg/EpicLogo";
 import PS5Logo from "../svg/PS5Logo";
 import XboxLogo from "../svg/XboxLogo";
 import NvidiaLogo from "../svg/NvidiaLogo";
-import { Link } from "react-router";
+import { useTranslation } from "react-i18next";
 export default function HeroNoVideo() {
+  const { t } = useTranslation("home");
   return (
     <section className="relative hero-arc flex flex-col justify-center items-center bg-center bg-no-repeat bg-cover w-full min-w-[100%] h-[100vh]">
       <div className="bg-black/50 absolute inset-0 z-0 h-full"></div>
@@ -13,7 +14,7 @@ export default function HeroNoVideo() {
         <div className="flex flex-col justify-center items-center gap-3 lg:gap-10 xl:gap-12">
           <Logo textcolor="#fff" />
           <h2 className="text-[#ece2d0] text-[3rem] md:text-[3.5rem] lg:text-[5rem] xl:text-[6rem] text-center leading-10 uppercase font-bold">
-            Disponível agora
+            {t("h1HeroSection")}
           </h2>
         </div>
         <div className="flex flex-wrap gap-x-7 gap-y-3 justify-center">
@@ -31,7 +32,7 @@ export default function HeroNoVideo() {
             }
           }}
           className="border border-bege rounded-sm uppercase font-barlow font-semibold text-bege px-10 py-2 text-[1.125rem] cursor-pointer">
-          Assista ao trailer
+          {t("WatchTrailer")}
         </button>
       </div>
     </section>
