@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import Data from "../../data/News.json";
+import { useTranslation } from "react-i18next";
+
+// Traduções
+import enNews from "../../i18n/locales/en/news.json";
+import ptNews from "../../i18n/locales/pt/News.json";
 
 // --------------------------------- TIPOS
 interface BlocoBase {
@@ -96,6 +101,7 @@ function formatRichText(text: string) {
 // --------------------------------- COMPONENTE
 export default function NewsSingle() {
   const { slug } = useParams<{ slug: string }>();
+  const { i18n } = useTranslation();
   const [noticia, setNoticia] = useState<Noticia | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -107,124 +113,135 @@ export default function NewsSingle() {
 
     const normalizedParam = normalizeSlug(slug);
 
-    const rawItem = Data.find(
-      (item) => normalizeSlug(item.slug) === normalizedParam
+    // Busca original no News.json
+    const originalItem = Data.find(
+      (item: any) => normalizeSlug(item.slug) === normalizedParam
     );
 
-    if (!rawItem) {
+    if (!originalItem) {
       setNoticia(null);
       setLoading(false);
       return;
     }
 
-    const Header_noticia: Bloco[] = rawItem.items.map(
-      (b: any, index: number) => {
-        switch (b.type) {
-          case "title":
-            return {
-              id: index,
-              __component: "blocos.title",
-              title: b.value,
-            };
+    // Escolhe o JSON de tradução baseado no idioma
+    const translations = i18n.language === "en" ? enNews : ptNews;
 
-          case "image":
-            return {
-              id: index,
-              __component: "blocos.image",
-              image_single: b.value,
-            };
-
-          case "sub-title":
-            return {
-              id: index,
-              __component: "blocos.sub-title",
-              subtitle: b.value,
-            };
-
-          case "subtitle-21px":
-            return {
-              id: index,
-              __component: "blocos.subtitle-21px",
-              subtitle: b.value,
-            };
-
-          case "subtitle-18px":
-            return {
-              id: index,
-              __component: "blocos.subtitle-18px",
-              subtitle: b.value,
-            };
-
-          case "date":
-            return {
-              id: index,
-              __component: "blocos.date-field",
-              date_field: b.value,
-            };
-
-          case "list":
-            return {
-              id: index,
-              __component: "blocos.content",
-              content: [
-                {
-                  type: "list",
-                  children: (b.value ?? []).map((txt: string) => ({
-                    type: "list-item",
-                    children: [{ type: "text", text: txt }],
-                  })),
-                },
-              ],
-            };
-
-          case "paragraph":
-            return {
-              id: index,
-              __component: "blocos.content",
-              content: [
-                {
-                  type: "paragraph",
-                  children: [{ type: "text", text: b.value }],
-                },
-              ],
-            };
-
-          case "video":
-            return {
-              id: index,
-              __component: "blocos.video",
-              video: b.value,
-            };
-
-          case "barra-amarela":
-            return {
-              id: index,
-              __component: "blocos.barra-amarela",
-            };
-
-          default:
-            return {
-              id: index,
-              __component: "blocos.content",
-              content: [
-                {
-                  type: "paragraph",
-                  children: [{ type: "text", text: "" }],
-                },
-              ],
-            };
-        }
-      }
+    // Procura tradução correspondente
+    const translatedItem = translations.find(
+      (t: any) => normalizeSlug(t.slug) === normalizedParam
     );
+
+    // Se existir tradução, usa ela. Se não, usa o original:
+    const sourceItems = translatedItem?.items ?? originalItem.items;
+
+    // Monta os blocos normalmente (sem mudar nada da estrutura)
+    const Header_noticia: Bloco[] = sourceItems.map((b: any, index: number) => {
+      switch (b.type) {
+        case "title":
+          return {
+            id: index,
+            __component: "blocos.title",
+            title: b.value,
+          };
+
+        case "image":
+          return {
+            id: index,
+            __component: "blocos.image",
+            image_single: b.value,
+          };
+
+        case "sub-title":
+          return {
+            id: index,
+            __component: "blocos.sub-title",
+            subtitle: b.value,
+          };
+
+        case "subtitle-21px":
+          return {
+            id: index,
+            __component: "blocos.subtitle-21px",
+            subtitle: b.value,
+          };
+
+        case "subtitle-18px":
+          return {
+            id: index,
+            __component: "blocos.subtitle-18px",
+            subtitle: b.value,
+          };
+
+        case "date":
+          return {
+            id: index,
+            __component: "blocos.date-field",
+            date_field: b.value,
+          };
+
+        case "list":
+          return {
+            id: index,
+            __component: "blocos.content",
+            content: [
+              {
+                type: "list",
+                children: (b.value ?? []).map((txt: string) => ({
+                  type: "list-item",
+                  children: [{ type: "text", text: txt }],
+                })),
+              },
+            ],
+          };
+
+        case "paragraph":
+          return {
+            id: index,
+            __component: "blocos.content",
+            content: [
+              {
+                type: "paragraph",
+                children: [{ type: "text", text: b.value }],
+              },
+            ],
+          };
+
+        case "video":
+          return {
+            id: index,
+            __component: "blocos.video",
+            video: b.value,
+          };
+
+        case "barra-amarela":
+          return {
+            id: index,
+            __component: "blocos.barra-amarela",
+          };
+
+        default:
+          return {
+            id: index,
+            __component: "blocos.content",
+            content: [
+              {
+                type: "paragraph",
+                children: [{ type: "text", text: "" }],
+              },
+            ],
+          };
+      }
+    });
 
     setNoticia({
       id: Math.random(),
       Header_noticia,
-      ...rawItem,
+      ...originalItem,
     });
 
     setLoading(false);
-  }, [slug]);
+  }, [slug, i18n.language]);
 
   // -------------------------------- RENDER
   if (loading) return <p className="text-center py-10">Carregando…</p>;
@@ -232,7 +249,7 @@ export default function NewsSingle() {
     return <p className="text-center py-10">Notícia não encontrada.</p>;
 
   return (
-    <article className="w-full p-3 bg-bege">
+    <article className="w-full p-3 bg-bege max-w-[100rem]">
       <div className="w-full max-w-3xl mx-auto text-dark-blue">
         {noticia.Header_noticia.map((block) => {
           switch (block.__component) {

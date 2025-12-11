@@ -17,12 +17,12 @@ function LanguageSwitcher() {
       {/* Botões para trocar idioma */}
       <button
         onClick={() => changeLanguage("pt")}
-        className="absolute left-0 w-8 h-8 text-center text-sm text-black font-semibold">
+        className="absolute left-0 w-8 h-8 text-center text-sm text-black font-semibold cursor-pointer">
         PT
       </button>
       <button
         onClick={() => changeLanguage("en")}
-        className="absolute right-0 w-8 h-8 text-center text-sm text-black font-semibold">
+        className="absolute right-0 w-8 h-8 text-center text-sm text-black font-semibold cursor-pointer">
         EN
       </button>
     </div>

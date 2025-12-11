@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import GridCardNews from "../news/GridCardNews";
 import { Link } from "react-router";
 import NewsSkeleton from "../NewsSkeleton";
-import jsonNoticias from "../../data/news.json";
+import jsonNoticias from "../../data/News.json";
 
 export default function LastetsNews() {
   const { t } = useTranslation("home");

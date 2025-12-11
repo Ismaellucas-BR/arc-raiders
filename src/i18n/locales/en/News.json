@@ -1,66 +1,357 @@
-{
-  "0": {
-    "id": 0,
-    "title": "Champions Paris: Pool supported by AWS",
-    "subtitle": "The jackpot starts on September 4th on the website and on the client. Get ready!",
-    "category": "Esports",
-    "date": "September 4, 2025",
-    "type": "bgBlack",
-    "content": [
+[
+  {
+    "slug": "full-ost-release",
+    "thumb": "https://arcraiders.developerismaellucas.com/imgs/b40a0726-bf0c-full-ost-release-card-300x200-300x200.png",
+    "date": "November 7, 2025",
+    "barra-amarela": "",
+    "items": [
+      { "type": "title", "value": "Full Official Soundtrack Release" },
+      { "type": "date", "value": "November 7, 2025" },
+      { "type": "barra-amarela", "value": "" },
       {
-        "id": "p1",
         "type": "paragraph",
-        "content": "Jackpot, powered by AWS, is here! Compete with your friends, follow the daily leaderboards, pick the underdogs, and raise your fist to the sky when that team you disbelieved pulls off a miraculous run and shatters your Perfect Predictions."
+        "value": "\n **Raiders,** \n \n Dance over your enemies' bodies, dance for joy in the extraction elevator, and dance in the bars of Speranza. **The full ARC Raiders official soundtrack by Patrik Andrén & Johan Söderqvist is out today!**"
       },
       {
-        "id": "p2",
+        "type": "video",
+        "value": "https://www.youtube.com/embed/wSeZEUeg5qQ?si=Ze0aTCjUgQZBAq1_"
+      }
+    ]
+  },
+  {
+    "slug": "new-map-conditions",
+    "thumb": "https://arcraiders.developerismaellucas.com/imgs/6a416696-aa6f-new-map-conditions-card-300x200-300x200.png",
+    "date": "November 7, 2025",
+    "barra-amarela": "",
+    "items": [
+      { "type": "title", "value": "New Map Conditions" },
+      { "type": "date", "value": "November 7, 2025" },
+      { "type": "barra-amarela", "value": "" },
+      {
         "type": "paragraph",
-        "content": "The magic and chaos of jackpot are back, this time on a new level and with a big new feature: welcome to Factions!"
+        "value": "\n **Raiders,** \n \n Reports from the surface cite unusual weather patterns and ARC behavior. That means one thing: new Map Conditions are here. Are you brave enough to head topside and report back on your findings? That is…if you manage to return to Speranza safely. \n \n"
       },
+
+      { "type": "title", "value": "Electromagnetic Storm" },
       {
-        "id": "p3",
         "type": "paragraph",
-        "content": "And what are Factions? For Champions Paris, ten global creators are each leading their own Faction. You can join a Faction, and your predictions will directly contribute to your favorite creator's path to victory. If the combined predictions from their community are the strongest, the Faction Leader will take home THE BELT, and you'll share the honor of becoming one of the first Faction Champions of the Pick 'em!"
+        "value": "The Rust Belt’s lighting up, literally. Bolts crack the sky, frying ARC and old junk alike. Risky business, but a smart Raider can use the elements to their advantage. There's even rumors of some strikes leaving behind curious formations…"
       },
       {
-        "id": "p4",
+        "type": "image",
+        "value": "https://arcraiders.developerismaellucas.com/imgs/ca7f1e5a-6a7d-ArcRaiders_MapConditions_ElectromagneticStorm_16-9-1024x576.jpg"
+      },
+
+      { "type": "title", "value": "Hidden Bunker" },
+      {
         "type": "paragraph",
-        "content": "And the rewards? Each Faction Leader has chosen a special in-game item that will be awarded to their Faction members upon victory."
+        "value": "Rumors say there’s a long-sealed bunker buried near the Spaceport outskirts. Radios are chirping, Raiders and ARC alike are swarming, whatever’s inside must be worth the static."
       },
       {
-        "id": "p5",
+        "type": "image",
+        "value": "https://arcraiders.developerismaellucas.com/imgs/bbf29359-06eb-ArcRaiders_MapConditions_HiddenBunker_16-9-1024x576.jpg"
+      },
+
+      { "type": "title", "value": "Night Raid" },
+      {
         "type": "paragraph",
-        "content": "Tag your friend who's obsessed with statistics, get together on Discord, and bet on the winners for a chance to win rewards."
+        "value": "Night falls over Blue Gate. ARC grow meaner in the dark, as do Raiders; hungrier for the rare salvage found under moonlight. Keep your wits sharp out there, everyone is sure to be hunting tonight."
       },
       {
-        "id": "subtitle1",
-        "type": "subtitle",
-        "content": "Important dates:"
+        "type": "image",
+        "value": "https://arcraiders.developerismaellucas.com/imgs/59bfe924-e89c-ArcRaiders_MapConditions_NightRaid_16-9-1024x576.jpg"
+      }
+    ]
+  },
+  {
+    "slug": "launch-thank-you",
+    "thumb": "https://arcraiders.developerismaellucas.com/imgs/b6aef103-c3b9-launch-thank-you-card-300x200-300x200.png",
+    "date": "November 10, 2025",
+    "barra-amarela": "",
+    "items": [
+      { "type": "title", "value": "Launch Thank You!" },
+      { "type": "date", "value": "November 10, 2025" },
+      { "type": "barra-amarela", "value": "" },
+      {
+        "type": "paragraph",
+        "value": "Hey Raiders!\n \n It's been a little over one week since we opened up the tunnels for you to head Topside, and this past weekend we reached over 700,000 concurrent Raiders on the surface! We're so happy to have you all here!"
       },
       {
-        "id": "list1",
+        "type": "image",
+        "value": "https://arcraiders.developerismaellucas.com/imgs/2f5049e6-446c-ARCRaiders_ThankYou700KCCU-1024x576.jpg"
+      },
+      {
+        "type": "paragraph",
+        "value": "The many different ways you play and participate in ARC Raiders have completely blown us away, going far beyond what we ever imagined. You surprise us, outsmart us, and keep us on our toes. We wouldn’t have it any other way. The point being, you all push us to be better, and we’re truly grateful to have you along for this journey.\n \n With love,\n \n The ARC Raiders Team"
+      }
+    ]
+  },
+  {
+    "slug": "duo-and-store-update",
+    "thumb": "https://arcraiders.developerismaellucas.com/imgs/347a08fb-0875-duo-and-store-update-card-300x200-300x200.png",
+    "date": "November 12, 2025",
+    "barra-amarela": "",
+    "items": [
+      { "type": "title", "value": "Duo Matchmaking and Store Update" },
+      { "type": "date", "value": "November 12, 2025" },
+      { "type": "barra-amarela", "value": "" },
+      {
+        "type": "paragraph",
+        "value": "Hello Raiders,\n \nHere’s a quick update on a few areas of discussion in the community, and the actions we’ve taken."
+      },
+
+      { "type": "title", "value": "Duo Matchmaking" },
+      {
+        "type": "paragraph",
+        "value": "We have silently tested and **enabled Duo prioritized matchmaking**, beginning earlier this week. Duo matchmaking will work like this: first, we prioritize Solos and Squads to play separately. After that, we prioritize Duos to play with other Duos, and for Trios to play with Trios. Please note that this is not a 100% guaranteed system, so you may at times run into differing constellations of players other than your own"
+      },
+
+      { "type": "title", "value": "Store Cosmetic Prices" },
+      {
+        "type": "paragraph",
+        "value": "We have heard your feedback. **We’ve reviewed our prices and made adjustments to lower prices where applicable. Revised prices will go live tomorrow, Thursday the 13th, at 10:30 CET**. For any Raider who has already made a purchase on the old pricing, we’ll compensate you for the difference. These Raider Tokens will be refunded back into your account automatically in the coming week."
+      },
+
+      { "type": "title", "value": "Raider Decks" },
+      {
+        "type": "paragraph",
+        "value": "At the moment, we have one free Raider Deck available for all players. In the future you’ll see both free and premium Raider Decks. Important things to note:"
+      },
+      {
         "type": "list",
-        "content": [
-          "Group Stage Prediction: Opens September 4th at 1:00 PM BRT; closes September 12th at 10:20 AM BRT, with the start of the Group Stage.",
-          "Qualifying Pool: opens on September 22nd, after the draw and publication of the schedule (estimated for 10:00 PM BRT); closes on September 25th at 10:20 AM BRT, with the start of the Qualifying Pool."
+        "value": [
+          "**Gameplay Items are only in free Raider Decks**. To help you along the way as a new Raider, we have included some Gameplay Items in the free Raider Deck, which can be unlocked via progression.",
+          "**There are no Pay to Win items in the premium Raider Decks**. The focus for premium Decks are based on cosmetics and convenience."
         ]
       },
       {
-        "id": "subtitle2",
-        "type": "subtitle",
-        "content": "Pool Rewards"
+        "type": "paragraph",
+        "value": "For more details on what’s to come for ARC Raiders, be sure to check out the 2025 Roadmap. We will continue to build and adjust the game with you in mind, so thank you for your feedback!\n\n**The ARC Raiders team**"
+      }
+    ]
+  },
+  {
+    "slug": "north-line-update",
+    "thumb": "https://arcraiders.developerismaellucas.com/imgs/ab9b3686-ffe0-north-line-update-update-card-300x200-300x200.png",
+    "date": "November 12, 2025",
+    "barra-amarela": "",
+    "items": [
+      { "type": "title", "value": "The Frontier Expands North" },
+      { "type": "date", "value": "November 12, 2025" },
+      { "type": "barra-amarela", "value": "" },
+      {
+        "type": "paragraph",
+        "value": "Raiders,\n \nBeneath Speranza is a sprawling network of tunnels, and it seems some have been sealed off with great effort. However, with ingenuity and elbow grease, nothing stays hidden forever. Will you join Speranza’s efforts to rebuild the tunnels, and connect what has been lost?"
       },
       {
-        "id": "list2",
+        "type": "video",
+        "value": "https://www.youtube.com/watch?v=O9JeiBAAey4&embeds_referring_euri=https%3A%2F%2Farcraiders.com%2F&source_ve_path=OTY3MTQ"
+      },
+
+      {
+        "type": "title",
+        "value": "Join the Community Unlock Event: Breaking New Ground"
+      },
+      {
+        "type": "paragraph",
+        "value": "On November 13, the **Community Unlock Event “Breaking New Ground”** begins. In this event, players are asked to contribute resources to the tunnel project. In Speranza, nothing comes for free, and the tunnel project is no different. **Basic Materials must be collected and donated for the restoration of the tunnels** to reach the fifth map: Stella Montis. Any player that has played at least five rounds can participate in this community effort."
+      },
+      {
+        "type": "image",
+        "value": "https://arcraiders.developerismaellucas.com/imgs/0e6a2e98-8a98-ArcRaiders_BlogImage_NorthLine-1_16x9-1024x576.jpg"
+      },
+      { "type": "paragraph", "value": "Materials needed:" },
+      {
         "type": "list",
-        "content": [
-          "Spray Tejo ¡Eureka! for making at least 1 prediction, whether in the Group Stage or the Qualifiers.",
-          "G.O.A.T. Pendant for those who finish in the top 50% at the end of the event",
-          "Golden G.O.A.T. pendant for those who finish in the top 20% at the end of the event",
-          "'100%' title for those who get all the guesses right at the end of the event"
+        "value": [
+          "Metal Parts",
+          "Fabric",
+          "Chemicals",
+          "Rubber Parts",
+          "Plastic Parts"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "value": "But your efforts will not go unrewarded. Donations in the **“Breaking New Ground”** event will earn **Merits**, a new event currency that will fuel the next phase of progression. While there is a cap on how many Merits can be earned for material donation, additional contributions will aid Speranza in reaching Stella Montis more quickly.\nOnce completed, the restoration of the tunnels and unlocking of Stella Montis will trigger Phase II, **“Staking Our Claim,”** a new progression track."
+      },
+
+      { "type": "title", "value": "Map unlock: Stella Montis" },
+      {
+        "type": "paragraph",
+        "value": "Carved deep into the northern mountains, Stella Montis tempts Raiders to explore an abandoned facility that remains relatively well-preserved compared to the wreckage of the lower Rust Belt. Cold and sterile, these ruins hint at what humanity left behind in its push towards the stars."
+      },
+      {
+        "type": "image",
+        "value": "https://arcraiders.developerismaellucas.com/imgs/bb86620d-e249-ArcRaiders_BlogImage_NorthLine-2_16x9-1024x576.jpg"
+      },
+      {
+        "type": "paragraph",
+        "value": "The reconnection of the tunnels to Stella Montis will trigger the opening of Phase II, **“Staking Our Claim.”** This is a new progression track with personal rewards and challenges, and will run for a limited time until December."
+      },
+
+      { "type": "title", "value": "New ARC enemies, gameplay items, and more" },
+      {
+        "type": "paragraph",
+        "value": "Raiders who investigate Stella Montis will recover rare resources, new gameplay items, maybe even schematics for long-lost technology.\nThe North Line update also introduces two new ARC enemies, each bringing distinct challenges to those who are brave enough to venture topside. The **Matriarch** is an imposing ARC machine that makes the Queen look friendly and can be found during a specific map condition. The **Shredder** will first appear in Stella Montis, challenging Raiders to stay sharp in close-quarter encounters."
+      },
+      { "type": "subtitle-21px", "value": "New ARC:" },
+      { "type": "list", "value": ["Matriarch", "Shredder"] },
+      { "type": "subtitle-21px", "value": "New Weapon and Gameplay Items:" },
+      {
+        "type": "list",
+        "value": ["New legendary weapon", "Three new mines", "Two new grenades"]
+      },
+      { "type": "subtitle-21px", "value": "New Stella Montis Quests" },
+
+      { "type": "title", "value": "Looking ahead" },
+      {
+        "type": "paragraph",
+        "value": "The North Line is just the beginning of the **ARC Raiders** post-launch roadmap. The next update, Cold Snap, arrives this December which introduces the **“Flickering Flames”** event, a new snowfall Map Condition, the awaited Expedition Project Raider reset, and more.\n \nSee you topside,\n \nThe ARC Raiders Team"
+      }
+    ]
+  },
+  {
+    "slug": "north-line-patch-notes",
+    "thumb": "https://arcraiders.developerismaellucas.com/imgs/d8fcf0d5-0257-north-line-patch-notes-card-300x200-300x200.png",
+    "date": "November 13, 2025",
+    "barra-amarela": "",
+    "items": [
+      { "type": "title", "value": "November Update 1.2.0" },
+      { "type": "date", "value": "November 13, 2025" },
+      { "type": "barra-amarela", "value": "" },
+      {
+        "type": "image",
+        "value": "https://arcraiders.developerismaellucas.com/imgs/a604f4c4-1750-ARC%20Raiders_Steam_EventHeader_PatchNotes-StellaMontis_1920x622-1024x332.png"
+      },
+      {
+        "type": "title",
+        "value": "ACT I - NORTH LINE"
+      },
+      {
+        "type": "paragraph",
+        "value": "The North Line Train has arrived, prepare for extraction.\n \n Raiders!\n \nWe‘ve discovered a secluded research facility in the mountains—Stella Montis. Work to restore the tunnels has begun, and we need you to pull your weight."
+      },
+      { "type": "barra-amarela", "value": "" },
+      {
+        "type": "title",
+        "value": "What's New?"
+      },
+      { "type": "subtitle-21px", "value": "Map" },
+      {
+        "type": "list",
+        "value": ["Stella Montis"]
+      },
+      { "type": "subtitle-21px", "value": "ARC" },
+      {
+        "type": "list",
+        "value": ["Matriarch & Shredder"]
+      },
+      { "type": "subtitle-21px", "value": "Community Unlock Event" },
+      { "type": "subtitle-21px", "value": "New items to discover" },
+      { "type": "subtitle-21px", "value": "New quests to accept" },
+      { "type": "barra-amarela", "value": "" },
+      {
+        "type": "title",
+        "value": "Patch Highlights"
+      },
+      {
+        "type": "list",
+        "value": [
+          "Reduced character movement latency on server to improve the 'desync' problem where it looks like you get damaged even after behind cover.",
+          "Fixed an issue that prevented players from completing quests involving multiple objectives or item collections within a single round.",
+          "Fixed various achievements not working correctly. Players will need to redo some achievements with only one objective item (e.g. “Destroy the Queen”) while achievements with multiple objectives will only need parts of them completed again.",
+          "Reduced delay between shooting at ARC and seeing impact effects on the target.",
+          "Fixed various locations where players could fall through the terrain."
         ]
       }
-    ],
-    "blog": false
+    ]
+  },
+  {
+    "slug": "community-event-phase-two-has-begun",
+    "thumb": "https://arcraiders.developerismaellucas.com/imgs/08d7e3e6-b6aa-duck-update-patch-notes-1-3-0-card-300x200-300x200.png",
+    "date": "November 19, 2025",
+    "barra-amarela": "",
+    "items": [
+      { "type": "title", "value": "Help us Stake Our Claim!" },
+      { "type": "date", "value": "November 19, 2025" },
+      { "type": "barra-amarela", "value": "" },
+      {
+        "type": "paragraph",
+        "value": "Last week, you didn't just show up - you punched a hole in the tunnels so hard we broke clean through to Stella Montis - IN ONE DAY.\n \n  Topside is tough, but for the common cause, our Raiders pulled together... Thank you for playing your part for Speranza.\n \n The event might have been completed in just 24 hours, but that's not the most surprising stat of the week. We have **crunched the numbers for the community event Breaking New Ground**, and the results tell an interesting story:"
+      },
+      {
+        "type": "list",
+        "value": [
+          "**Over 25 million visits** to Stella Montis",
+          "**24,375 resources donated** by a single Raider",
+          "**2,270,576 Raiders knocked down** by the Shredder",
+          "**37,218 Raiders downed themselves** with the Deadline",
+          "**26,923 Matriarchs** eliminated",
+          "**117 Raiders somehow downed themselves** with the Volcanic Rock"
+        ]
+      },
+      {
+        "type": "image",
+        "value": "https://arcraiders.developerismaellucas.com/imgs/b9c8b9a8-7ddb-ArcRaiders_KeyArt_StellaMontisInfographic_16-9_Final-V2-1024x576.jpg"
+      },
+      {
+        "type": "paragraph",
+        "value": "The work isn't done.\n \n Stella Montis might be abandoned by humanity, but dangerous ARC machines still haunt the halls of the facility. Shredder poses a uniquely lethal threat in the close quarters of Stella Montis’ corridors, stalking you through the facility and unleashing death by a thousand cuts. How will you counter this new threat?\n \n Phase II of our community event, Staking Our Claim, has already begun - and we need boots on the ground.\n \n During this event, you'll be rewarded with Merits for visiting any Topside map. These Merits are awarded based on XP earned, and will accumulate to unlock weapons, gadgets, cosmetics, and tokens for your Raider.\n \n On the new frontier, time is of the essence. Staking Our Claim will run until December 8th, so be sure to get involved and claim your share of the wealth.\n \n Until next time,\n \n The ARC Raiders Team"
+      }
+    ]
+  },
+  {
+    "slug": "duck-update-patch-notes-1-3-0",
+    "thumb": "https://arcraiders.developerismaellucas.com/imgs/08d7e3e6-b6aa-duck-update-patch-notes-1-3-0-card-300x200-300x200.png",
+    "date": "November 20, 2025",
+    "barra-amarela": "",
+    "items": [
+      { "type": "title", "value": "Update 1.3.0" },
+      { "type": "date", "value": "November 20, 2025" },
+      { "type": "barra-amarela", "value": "" },
+      {
+        "type": "image",
+        "value": "https://arcraiders.developerismaellucas.com/imgs/76b1ba37-5011-ARC-Raiders_Steam_EventHeader_PatchNotes_Nov20Ducks_1920x622-1024x332 (2).jpg"
+      },
+      {
+        "type": "paragraph",
+        "value": "Raiders!\n \n It’s been a week since we stepped into Stella Montis. We have some updates from Speranza with bug fixes, balance changes and a little surprise."
+      },
+      { "type": "barra-amarela", "value": "" },
+      { "type": "title", "value": "Balance Changes" },
+      { "type": "subtitle-21px", "value": "Items:" },
+      { "type": "subtitle-18px", "value": "Deadline" },
+      {
+        "type": "list",
+        "value": [
+          "Buy value: From 8,100 to 15,000 Coins",
+          "Sell value: From 3,000 to 5,000 Coins",
+          "**Crafting:**",
+          "Old: 2 Explosive compound + 1 Synthesized fuel",
+          "New: 3 Explosive compound + 2 ARC Circuitry",
+          "Deadline trader stock: From 3 to 1"
+        ]
+      },
+      { "type": "subtitle-18px", "value": "Power cell" },
+      {
+        "type": "list",
+        "value": ["Sell value: From 640 to 270 Coins"]
+      },
+      { "type": "subtitle-18px", "value": "Launcher ammo" },
+      {
+        "type": "list",
+        "value": [
+          "**Buy value:**",
+          "Old: 10 launcher ammo for 6,000 Coins",
+          "New: 6 launcher ammo for 4,500 Coins",
+          "Sell value: From 200 to 250",
+          "**Crafting:**",
+          "Old: 6 launcher ammo for 4 Metal parts + 1 Explosive Compound",
+          "New: 6 launcher ammo for 1 ARC Motion Core + 2 Crude Explosives",
+          "Launcher ammo crafting is available at the Workbench without needing a blueprint."
+        ]
+      }
+    ]
   }
-}
+]

@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import FirstBar from "../svg/FirstBar";
 import { useTranslation } from "react-i18next";
 export default function SecondSection() {
