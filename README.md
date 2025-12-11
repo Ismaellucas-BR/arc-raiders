@@ -8,7 +8,7 @@ Este repositório contém um projeto que recria o site do jogo ARC Raiders, util
 
 ## 🚀 Demonstração
 
-![Demo](https://developerismaellucas.com/assets/arcRaidersMain.png)
+![Demo](./src/assets/imgs/arcRaidersMain.png)
 
 [🔗 Acesse o projeto](https://arcraiders.developerismaellucas.com/)
 
