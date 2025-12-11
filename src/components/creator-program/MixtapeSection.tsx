@@ -1,9 +1,12 @@
 import Mixtape from "../../assets/imgs/Mixtape-section/mixtape.png";
 import SecondBar from "../svg/SecondBar";
-
+import { useTranslation } from "react-i18next";
 export default function MixtapeSection() {
+  const { t } = useTranslation("CreatorProgram");
   return (
-    <section className="bg-mixtape-section bg-cover bg-center bg-no-repeat  flex flex-col justify-center items-center max-w-[100rem]">
+    <section
+      id="ProgramTiers"
+      className="bg-mixtape-section bg-cover bg-center bg-no-repeat  flex flex-col justify-center items-center max-w-[100rem]">
       <div className=" flex flex-col justify-center items-center py-10 max-w-[62.5rem]">
         <div className="flex flex-col justify-center items-center gap-7 w-[90%]">
           <div>
@@ -22,16 +25,15 @@ export default function MixtapeSection() {
                   </div>
                   <h2
                     className={`font-barlow font-bold  whitespace-pre-line text-[3rem] leading-12 md:text-[3.5rem] md:leading-14 xl:text-[4rem]`}>
-                    Embarque, Criadores.
+                    {t("EmbarkCreators")}
                   </h2>
                 </div>
                 <div className="flex flex-col gap-3 md:w-[55%] lg:w-[66%]">
                   <p className="text-lg opacity-90 text-[1.25rem] font-barlow xl:text-[1.25rem]">
-                    Seja você um criador promissor ou esteja apenas começando,
-                    queremos fazer parte da sua aventura!
+                    {t("WhetherYouAre")}
                   </p>
                   <p className="text-lg opacity-90 text-[1.25rem] font-barlow font-semibold xl:text-[1.25rem] uppercase">
-                    Benefícios e oportunidades exclusivas
+                    {t("ExclusivePerks")}
                   </p>
                 </div>
               </div>
@@ -54,18 +56,16 @@ export default function MixtapeSection() {
                     </div>
                     <h2
                       className={`font-barlow font-bold  whitespace-pre-line text-[3rem] leading-12 md:text-[3.5rem] md:leading-14 lg:w-fit xl:text-[4rem]`}>
-                      Parceiros Embarque.
+                      {t("EmbarkPartners")}
                     </h2>
                   </div>
                 </div>
                 <div className="flex flex-col gap-3 md:w-[55%]  xl:w-[70%]">
                   <p className="text-lg opacity-90 text-[1.25rem] font-barlow xl:text-[1.25rem]">
-                    Um nível exclusivo para criadores confiáveis ​​que
-                    construíram uma comunidade dedicada, possuem conteúdo de
-                    qualidade consistente e uma abordagem entusiasmada.
+                    {t("AnExclusiveTier")}
                   </p>
                   <p className="text-lg opacity-90 text-[1.25rem] font-barlow font-semibold xl:text-[1.25rem] uppercase">
-                    Possibilidade de patrocínio para conteúdo
+                    {t("PossibilityToBeSponsored")}
                   </p>
                 </div>
               </div>
@@ -76,13 +76,12 @@ export default function MixtapeSection() {
       <div className="bg-dark-blue flex flex-col justify-center items-center py-10">
         <div className="flex flex-col justify-center items-start gap-5 font-barlow font-normal uppercase w-[90%]">
           <h2 className="text-[1.25rem] xl:text-[1.5rem]">
-            Quer subir de nível?
+            {t("LookingToLevelUp")}
           </h2>
           <span className="text-[1.125rem] xl:text-[1.5rem]">
-            Não importa por onde você comece, sempre é possível almejar mais
-            alto. Se você crescer como criador, existe a{" "}
-            <span className="text-yellow-arc">possibilidade</span> de ser
-            convidado a se tornar um Parceiro da Embark mais tarde!
+            {t("NoMatter")}{" "}
+            <span className="text-yellow-arc">{t("possibility")} </span>
+            {t("toBeInvited")}
           </span>
         </div>
       </div>

@@ -19,7 +19,7 @@ export default function Header() {
             <ul className="flex justify-center items-center gap-4 font-barlow font-semibold capitalize cursor-pointer text-xl">
               <li>
                 <button
-                  className="span-effect text-[1.125rem]! uppercase text-dark-blue"
+                  className="span-effect text-[1.125rem]! uppercase text-dark-blue cursor-pointer"
                   onClick={() => {
                     navigate("/#news");
                   }}>
@@ -28,7 +28,7 @@ export default function Header() {
               </li>
               <li>
                 <button
-                  className="span-effect text-[1.125rem]! uppercase text-dark-blue"
+                  className="span-effect text-[1.125rem]! uppercase text-dark-blue cursor-pointer"
                   onClick={() => {
                     navigate("/#watch"); // navega para a home com hash
                   }}>
@@ -38,7 +38,7 @@ export default function Header() {
 
               <li>
                 <button
-                  className="span-effect text-[1.125rem]! uppercase text-dark-blue"
+                  className="span-effect text-[1.125rem]! uppercase text-dark-blue cursor-pointer"
                   onClick={() => {
                     navigate("/#features");
                   }}>
@@ -48,7 +48,7 @@ export default function Header() {
 
               <li>
                 <Link
-                  className="span-effect text-[1.125rem]! uppercase text-dark-blue"
+                  className="span-effect text-[1.125rem]! uppercase text-dark-blue cursor-pointer"
                   to="/twitch-drops">
                   Twitch Drops
                 </Link>
@@ -56,7 +56,7 @@ export default function Header() {
 
               <li>
                 <Link
-                  className="span-effect text-[1.125rem]! uppercase text-dark-blue"
+                  className="span-effect text-[1.125rem]! uppercase text-dark-blue cursor-pointer"
                   to="/creator-program">
                   {t("Creator-Program")}
                 </Link>

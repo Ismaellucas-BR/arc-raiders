@@ -4,8 +4,6 @@ import enCommon from "./locales/en/common.json";
 import ptCommon from "./locales/pt/common.json";
 import ptHome from "./locales/pt/home.json";
 import enHome from "./locales/en/home.json";
-import ptMedia from "./locales/pt/Media.json";
-import enMedia from "./locales/en/Media.json";
 import ptNews from "./locales/pt/News.json";
 import enNews from "./locales/en/News.json";
 import enTwitchDrops from "./locales/en/TwitchDrops.json";
@@ -18,7 +16,6 @@ i18n.use(initReactI18next).init({
     en: {
       common: enCommon,
       home: enHome,
-      Media: enMedia,
       News: enNews,
       TwitchDrops: enTwitchDrops,
       CreatorProgram: enCreatorProgram,
@@ -26,7 +23,6 @@ i18n.use(initReactI18next).init({
     pt: {
       common: ptCommon,
       home: ptHome,
-      Media: ptMedia,
       News: ptNews,
       TwitchDrops: ptTwitchDrops,
       CreatorProgram: ptCreatorProgram,
@@ -34,7 +30,7 @@ i18n.use(initReactI18next).init({
   },
   lng: "pt",
   fallbackLng: "en",
-  ns: ["common", "home", "Media", "News", "TwitchDrops", "CreatorProgram"],
+  ns: ["common", "home", "News", "TwitchDrops", "CreatorProgram"],
   defaultNS: "common",
   interpolation: { escapeValue: false },
 });

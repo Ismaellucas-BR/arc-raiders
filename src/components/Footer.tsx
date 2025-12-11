@@ -38,47 +38,39 @@ export default function Footer() {
           <LanguageSwitcher />
           <BackToTopButton />
           <nav className="flex flex-col gap-3 xl:flex-row xl:w-full xl:mb-7">
-            <ul className="flex flex-col justify-center items-start gap-2 font-barlow font-medium capitalize cursor-pointer text-xl xl:flex-row">
+            <ul className="flex flex-col justify-center items-start gap-1 font-barlow font-semibold capitalize cursor-pointer text-xl mb-4 lg:flex-row lg:gap-3 xl:mb-0">
               <li>
                 <button
-                  className="span-effect text-[1.125rem]! capitalize text-bege"
+                  className="span-effect text-base! capitalize font-normal text-white cursor-pointer"
                   onClick={() => {
-                    if (location.pathname !== "/") {
-                      // Se NÃO estiver na Home → navega para a Home com um state
-                      navigate("/", { state: { scrollTo: "watch" } });
-                    } else {
-                      // Se já estiver na Home → rola diretamente
-                      const section = document.querySelector("#watch");
-                      if (section)
-                        section.scrollIntoView({ behavior: "smooth" });
-                    }
+                    navigate("/#news");
                   }}>
-                  News {t("Games")}
+                  {t("News")}
                 </button>
               </li>
               <li>
                 <button
-                  className="span-effect text-[1.125rem]! capitalize text-bege"
+                  className="span-effect text-base! capitalize font-normal text-white cursor-pointer"
                   onClick={() => {
                     navigate("/#watch"); // navega para a home com hash
                   }}>
-                  Media {t("Games")}
+                  {t("Media")}
                 </button>
               </li>
 
               <li>
                 <button
-                  className="span-effect text-[1.125rem]! capitalize text-bege"
+                  className="span-effect text-base! capitalize font-normal text-white cursor-pointer"
                   onClick={() => {
                     navigate("/#features");
                   }}>
-                  features {t("Games")}
+                  {t("Features")}
                 </button>
               </li>
 
               <li>
                 <Link
-                  className="span-effect text-[1.125rem]! capitalize text-bege"
+                  className="span-effect text-base! capitalize font-normal text-white cursor-pointer"
                   to="/twitch-drops">
                   Twitch Drops
                 </Link>
@@ -86,9 +78,9 @@ export default function Footer() {
 
               <li>
                 <Link
-                  className="span-effect text-[1.125rem]! capitalize text-bege"
+                  className="span-effect text-base! capitalize font-normal text-white cursor-pointer"
                   to="/creator-program">
-                  Creator Program
+                  {t("Creator-Program")}
                 </Link>
               </li>
             </ul>

@@ -6,7 +6,7 @@ export default function BackToTopButton() {
 
   useEffect(() => {
     function onScroll() {
-      setVisible(window.scrollY > 300); // mostra após 300px; ajuste se quiser
+      setVisible(window.scrollY > 300);
     }
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -28,8 +28,7 @@ export default function BackToTopButton() {
             ? "translate-y-0 opacity-100"
             : "translate-y-6 opacity-0 pointer-events-none"
         }
-        bg-white/90 backdrop-blur-sm hover:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400`}>
-      {/* Circulo com seta curva para cima */}
+        bg-white/90 backdrop-blur-sm hover:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400 cursor-pointer`}>
       <span className="flex items-center justify-center w-9 h-9 rounded-full bg-indigo-600">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +37,6 @@ export default function BackToTopButton() {
           viewBox="0 0 24 24"
           fill="none"
           aria-hidden="true">
-          {/* seta curva pra cima */}
           <path
             d="M6 14c2.5-2.5 4.5-4.5 6-6 1.5 1.5 3.5 3.5 6 6"
             stroke="white"
@@ -57,7 +55,6 @@ export default function BackToTopButton() {
         </svg>
       </span>
 
-      {/* Texto */}
       <span className="hidden sm:inline-block text-sm font-medium text-indigo-900">
         {t("BackToTop")}
       </span>

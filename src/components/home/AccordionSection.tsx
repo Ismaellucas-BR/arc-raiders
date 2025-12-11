@@ -69,8 +69,8 @@ export default function AccordionSection({
 
       <Accordion
         type="single"
-        className="text-dark-blue font-barlow font-bold"
-        collapsible>
+        collapsible
+        className="w-full max-w-[50rem] text-dark-blue font-barlow font-bold">
         {items.map((item, i) => (
           <AccordionItem
             key={i}

@@ -21,6 +21,8 @@ body {
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+
+  scroll-behavior: smooth;
 }
 
 @theme inline {
@@ -422,3 +424,6 @@ button svg {
 }
 /*Mixtape-section*/
 /*Hero Creator*/
+.ring-offset-background svg {
+  stroke: white !important;
+}

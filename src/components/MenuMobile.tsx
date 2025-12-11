@@ -17,56 +17,49 @@ export default function MenuMobile() {
   return (
     <Sheet>
       <SheetTrigger>
-        <AlignJustify className="stroke-white dark:stroke-white" size={32} />
+        <AlignJustify className="stroke-dark-blue" size={32} />
       </SheetTrigger>
       <SheetContent className="bg-[#111]">
         <SheetHeader>
           <SheetTitle className="text-white">
-            {t("questionMobileMenu")}
+            {t("WhatAreYouLookingFor")}
           </SheetTitle>
           <SheetDescription></SheetDescription>
         </SheetHeader>
         <nav className="flex flex-col gap-3">
-          <ul className="flex flex-col justify-center items-start gap-4 font-barlow font-semibold capitalize cursor-pointer text-xl pl-2">
+          <ul className="flex flex-col justify-start items-start gap-4 font-barlow font-semibold capitalize cursor-pointer text-xl pl-4">
             <li>
               <button
-                className="span-effect text-[1.125rem]! uppercase text-white"
+                className="span-effect text-[1.125rem]! uppercase text-white cursor-pointer"
                 onClick={() => {
-                  if (location.pathname !== "/") {
-                    // Se NÃO estiver na Home → navega para a Home com um state
-                    navigate("/", { state: { scrollTo: "watch" } });
-                  } else {
-                    // Se já estiver na Home → rola diretamente
-                    const section = document.querySelector("#watch");
-                    if (section) section.scrollIntoView({ behavior: "smooth" });
-                  }
+                  navigate("/#news");
                 }}>
-                News {t("Games")}
+                {t("News")}
               </button>
             </li>
             <li>
               <button
-                className="span-effect text-[1.125rem]! uppercase text-white"
+                className="span-effect text-[1.125rem]! uppercase text-white cursor-pointer"
                 onClick={() => {
                   navigate("/#watch"); // navega para a home com hash
                 }}>
-                Media {t("Games")}
+                {t("Media")}
               </button>
             </li>
 
             <li>
               <button
-                className="span-effect text-[1.125rem]! uppercase text-white"
+                className="span-effect text-[1.125rem]! uppercase text-white cursor-pointer"
                 onClick={() => {
                   navigate("/#features");
                 }}>
-                features {t("Games")}
+                {t("Features")}
               </button>
             </li>
 
             <li>
               <Link
-                className="span-effect text-[1.125rem]! uppercase text-white"
+                className="span-effect text-[1.125rem]! uppercase text-white cursor-pointer"
                 to="/twitch-drops">
                 Twitch Drops
               </Link>
@@ -74,9 +67,9 @@ export default function MenuMobile() {
 
             <li>
               <Link
-                className="span-effect text-[1.125rem]! uppercase text-white"
+                className="span-effect text-[1.125rem]! uppercase text-white cursor-pointer"
                 to="/creator-program">
-                Creator Program
+                {t("Creator-Program")}
               </Link>
             </li>
             <li>

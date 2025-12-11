@@ -1,6 +1,5 @@
 import Logo from "../svg/Logo";
 import TwitchLogo from "../svg/TwitchIcon";
-import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 export default function HeroSection() {
   const { t } = useTranslation(["TwitchDrops", "common"]);
@@ -22,11 +21,11 @@ export default function HeroSection() {
             {t("TwitchDrops:EarnInGame")}
           </p>
         </div>
-        <Link
-          to=""
+        <a
+          href="#twitchDropsFrequentlyAsked"
           className="bg-yellow-arc text-dark-blue rounded-sm uppercase font-barlow font-semibold px-10 py-3 text-[1.125rem]">
           {t("common:LearnMore")}
-        </Link>
+        </a>
       </div>
     </section>
   );

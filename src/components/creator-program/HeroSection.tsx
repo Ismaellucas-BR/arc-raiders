@@ -20,11 +20,11 @@ export default function HeroSection() {
             {t("CreatorProgram:subTitle")}
           </p>
         </div>
-        <Link
-          to=""
-          className="bg-yellow-arc text-dark-blue rounded-sm uppercase font-barlow font-semibold px-10 py-3 text-[1.125rem]">
+        <a
+          href="#EnlistNow"
+          className="bg-yellow-arc text-dark-blue rounded-sm uppercase font-barlow font-semibold px-10 py-3 text-[1.125rem] ">
           {t("common:LearnMore")}
-        </Link>
+        </a>
       </div>
     </section>
   );

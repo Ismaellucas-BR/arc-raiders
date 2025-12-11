@@ -3,9 +3,11 @@
   "Creator-Program": "Creator Program",
   "Media": "Media",
   "News": "News",
+  "FollowTheLatest": "Follow the latest news about ARC Raiders.",
   "BackToTop": "Back to top",
   "FrequentlyAskedQuestions": "Frequently Asked Questions",
   "LearnMore": "Learn More",
+  "WhatAreYouLookingFor": "What are you looking for?",
   "alert": {
     "titulo": "Attention",
     "subtitulo": "This site is student-oriented. No information here should be interpreted or used for commercial purposes."
